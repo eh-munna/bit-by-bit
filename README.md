@@ -28,7 +28,7 @@ Each branch contains:
 
 ## **How to Use the Bit By Bit**
 
-Each branch corresponds to a distinct learning topic or concept. Branches are organized using a naming convention such as [branch number].[sub-branch number]. For example, code for Branch-1 Sub-1 is located in the `1.1` branch.
+Each branch corresponds to a distinct learning topic or concept. Branches are named using the convention [topicName]\_[subTopicNumber]. For example, code for Redux Subtopic 1.1 is located in the `redux_1.1` branch.
 
 Follow the steps below to run different branches on your local machine:
 
