@@ -1,14 +1,14 @@
 # **Bit By Bit** - Fullstack Learning Journey
 
-## **Introduction to Redux**
+## **Action Payloads and Creators**
 
-Implementing Redux with a vanilla JavaScript application.
+Implementing Redux with a vanilla JavaScript application with the help of Action Creators
 
 ---
 
-Welcome to **redux_1.1 ** of the **Bit By Bit**!
+Welcome to **redux_1.2 ** of the **Bit By Bit**!
 
-Here, I have learned how redux store work and implemented it with vanilla JavaScript application.
+Here, I have learned how to pass dynamic data as payload and working with them via action creators in redux and implemented it with vanilla JavaScript application.
 
 ---
 
@@ -16,10 +16,9 @@ Here, I have learned how redux store work and implemented it with vanilla JavaSc
 
 ### **_What has been covered_**
 
-- Understanding the Redux architecture.
-- Creating a Redux store.
-- Defining actions and reducers.
-- Connecting the Redux store to the UI.
+- Passing dynamic data as payload in actions
+- Creating action creators to encapsulate action creation logic
+- Using action creators to dispatch actions
 
 ### **Resources:**
 
@@ -48,7 +47,7 @@ Follow these steps to run this branch in your machine:
 3. **Switch to this branch:**
 
    ```bash
-   git checkout redux_1.1
+   git checkout redux_1.2
    ```
 
 4. **Open the HTML file in your browser:**

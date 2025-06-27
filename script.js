@@ -4,13 +4,33 @@ const counterValue = document.getElementById('counterValue');
 const incrementBtn = document.getElementById('incrementBtn');
 const decrementBtn = document.getElementById('decrementBtn');
 
+// action identifiers
+
+const INCREMENT = 'increment';
+const DECREMENT = 'decrement';
+
+// action creators
+
+const increment = (value) => {
+  return {
+    type: INCREMENT,
+    payload: value,
+  };
+};
+const decrement = (value) => {
+  return {
+    type: DECREMENT,
+    payload: value,
+  };
+};
+
 // Reducer
 function counterReducer(state = { value: 0 }, action) {
   switch (action.type) {
-    case 'increment':
-      return { ...state, value: state.value + 1 };
-    case 'decrement':
-      return { ...state, value: state.value - 1 };
+    case INCREMENT:
+      return { ...state, value: state.value + action.payload };
+    case DECREMENT:
+      return { ...state, value: state.value - action.payload };
     default:
       return state;
   }
@@ -33,9 +53,9 @@ store.subscribe(render);
 
 // Button event listeners
 incrementBtn.addEventListener('click', () => {
-  store.dispatch({ type: 'increment' });
+  store.dispatch(increment(2));
 });
 
 decrementBtn.addEventListener('click', () => {
-  store.dispatch({ type: 'decrement' });
+  store.dispatch(decrement(1));
 });
