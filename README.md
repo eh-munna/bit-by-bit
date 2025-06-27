@@ -1,41 +1,42 @@
 # **Bit By Bit** - Fullstack Learning Journey
 
-Welcome to my personal learning repo where I document my journey with:
+## **Introduction to Redux**
 
-- **React**
-- **Redux**
-- **TypeScript**
-- **Mongoose**
-- **Next.js**
-- **PostgreSQL**
-- **Prisma**
-- **Many more...**
+Implementing Redux with a vanilla JavaScript application.
 
 ---
 
-The **`main`** branch acts as the central hub for documentation, while all the code and resources are organized across topic-specific branches.
+Welcome to **redux_1.1 ** of the **Bit By Bit**!
+
+Here, I have learned how redux store work and implemented it with vanilla JavaScript application.
 
 ---
 
 ## **Branch Organization**
 
-Each branch contains:
+### **_What has been covered_**
 
-- **Code examples** and exercises for the topic.
-- **Summarized notes** with key points and insights in a `notes.md` file (if necessary).
+- Understanding the Redux architecture.
+- Creating a Redux store.
+- Defining actions and reducers.
+- Connecting the Redux store to the UI.
+
+### **Resources:**
+
+1. **Official Documentation:**
+
+- [Redux Fundamentals](https://redux.js.org/tutorials/fundamentals/part-1-overview)
 
 ---
 
-## **How to Use the Bit By Bit**
+### **How to Use This Branch**
 
-Each branch corresponds to a distinct learning topic or concept. Branches are named using the convention [topicName]\_[subTopicNumber]. For example, code for Redux Subtopic 1.1 is located in the `redux_1.1` branch.
-
-Follow the steps below to run different branches on your local machine:
+Follow these steps to run this branch in your machine:
 
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/eh-munna/bit-by-bit
+   git clone https://github.com/eh-munna/bit-by-bit.git
    ```
 
 2. **Navigate to the repository folder:**
@@ -44,21 +45,17 @@ Follow the steps below to run different branches on your local machine:
    cd bit-by-bit
    ```
 
-3. **Switch to a specific branch:**
-
-   - For example, to switch to main branch:
+3. **Switch to this branch:**
 
    ```bash
-   git checkout main
+   git checkout redux_1.1
    ```
 
-4. **Install dependencies:**
+4. **Open the HTML file in your browser:**
 
-   ```bash
-   npm install
-   ```
-
-5. **Follow the README instructions** in the branch to run the code.
+- Double-click the HTML file (e.g. index.html), or
+- Right-click → “Open With” → choose your browser, or
+- Use a local server (e.g. Live Server in VS Code)
 
 ---
 
