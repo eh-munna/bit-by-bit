@@ -6,7 +6,7 @@ Implementing Redux with a vanilla JavaScript application with the help of Action
 
 ---
 
-Welcome to **redux_1.2 ** of the **Bit By Bit**!
+Welcome to **redux_1.2** of the **Bit By Bit**!
 
 Here, I have learned how to pass dynamic data as payload and working with them via action creators in redux and implemented it with vanilla JavaScript application.
 
