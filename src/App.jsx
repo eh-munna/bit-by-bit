@@ -1,9 +1,5 @@
-import Counter from '@/components/Counter';
+import Navbar from '@/components/ui/Navbar';
 
 export default function App() {
-  return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
-      <Counter />
-    </div>
-  );
+  return <Navbar />;
 }
