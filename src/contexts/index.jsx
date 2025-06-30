@@ -7,10 +7,20 @@ export const useTheme = () => {
 };
 
 function ThemeProvider({ children }) {
-  const [theme, setTheme] = useState(true);
+  // Read initial theme from localStorage or default to light
+  const [theme, setTheme] = useState(() => {
+    if (typeof window !== 'undefined') {
+      return localStorage.getItem('theme') === 'dark';
+    }
+    return false;
+  });
 
   useEffect(() => {
-    document.body.classList.toggle('dark', theme);
+    // Save new theme in localStorage
+    localStorage.setItem('theme', theme ? 'dark' : 'light');
+
+    // Update HTML class for Tailwind dark mode
+    document.documentElement.classList.toggle('dark', theme);
   }, [theme]);
 
   return (

@@ -1,3 +1,4 @@
+import Button from '@/components/ui/Button';
 import { useTheme } from '@/contexts/index.jsx';
 import { Moon, Sun } from 'lucide-react';
 
@@ -7,38 +8,40 @@ export default function Navbar() {
   return (
     <nav
       className="
-      w-full flex items-center justify-between px-6 py-4
-      bg-white text-black
-      dark:bg-gray-900 dark:text-slate-200
-      shadow-md transition-colors duration-300
-    "
+        w-full flex items-center justify-between
+        px-8 py-4
+        bg-white dark:bg-gray-900
+        text-gray-900 dark:text-slate-200
+        shadow-lg
+        transition-colors duration-300
+      "
     >
-      <div className="text-xl font-bold tracking-tight">Bit By Bit</div>
+      <div className="text-2xl font-extrabold tracking-tight">Bit By Bit</div>
 
-      <ul className="flex space-x-6">
+      <ul className="flex gap-8 text-lg font-medium">
         <li>
-          <a href="#" className="hover:text-blue-500">
+          <a
+            href="/"
+            className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+          >
             Home
-          </a>
-        </li>
-        <li>
-          <a href="#" className="hover:text-blue-500">
-            About
-          </a>
-        </li>
-        <li>
-          <a href="#" className="hover:text-blue-500">
-            Contact
           </a>
         </li>
       </ul>
 
-      <button
-        onClick={() => setTheme(theme === true ? false : true)}
-        className="border px-3 py-1 rounded hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+      <Button
+        onClick={() => setTheme(!theme)}
+        className="
+          flex items-center justify-center
+          border border-gray-300 dark:border-gray-600
+          px-3 py-2
+          rounded-lg
+          hover:bg-gray-100 dark:hover:bg-gray-800
+          transition-colors duration-300
+        "
       >
-        {theme === true ? <Moon /> : <Sun />}
-      </button>
+        {theme === true ? <Moon size={20} /> : <Sun size={20} />}
+      </Button>
     </nav>
   );
 }

@@ -1,16 +1,16 @@
 # **Bit By Bit** - Fullstack Learning Journey
 
-## **Setup react-redux**
+## **Redux Connect API**
 
-Installation and setup Actions
+Setup Redux Connect API
 
 ---
 
-## **redux_1.4** Branch Overview
+## **redux_1.5** Branch Overview
 
-Welcome to **redux_1.4** of the **Bit By Bit** project!
+Welcome to **redux_1.5** of the **Bit By Bit!**
 
-In this branch, I have installed the Redux, and created some basic stuff for react redux.
+In this branch, I have practiced the connect API of the Redux, and controlled the counter state using the connect API.
 
 ---
 
@@ -18,14 +18,15 @@ In this branch, I have installed the Redux, and created some basic stuff for rea
 
 ### **Key Topics Covered**
 
-- Installing and folder organization for Redux
-- Actions and Action Creators has been implemented
+- Implemented Redux Connect API to connect React components with Redux store
+- Used `mapStateToProps` to map state from the Redux store to component props
+- Used `mapDispatchToProps` to map dispatch actions to component props
 
 ---
 
 ### **Resources**
 
-- [Redux Official Documentation](https://redux.js.org/introduction/getting-started)
+- [connect()](https://react-redux.js.org/api/connect)
 
 ---
 
@@ -48,7 +49,7 @@ Follow these steps to run this branch in your machine:
 3. **Switch to this branch:**
 
    ```bash
-   git checkout redux_1.4
+   git checkout redux_1.5
    ```
 
 4. **Install dependencies:**
