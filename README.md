@@ -1,16 +1,16 @@
 # **Bit By Bit** - Fullstack Learning Journey
 
-## **Redux Hooks API**
+## **Redux combineReducers API**
 
-Setup Redux Hooks API
+Setup Redux combineReducers API
 
 ---
 
-## **redux_1.6** Branch Overview
+## **redux_1.7** Branch Overview
 
-Welcome to **redux_1.6** of the **Bit By Bit!**
+Welcome to **redux_1.7** of the **Bit By Bit!**
 
-In this branch, I have practiced using the Redux Hooks API, and controlled the counter state using the `useSelector` and `useDispatch` hooks.
+In this branch, I have practiced organizing Redux state using the `combineReducers` function to manage multiple slices of state in a scalable way.
 
 ---
 
@@ -18,15 +18,15 @@ In this branch, I have practiced using the Redux Hooks API, and controlled the c
 
 ### **Key Topics Covered**
 
-- Implemented Redux Hooks API to connect React components with the Redux store
-- Used `useSelector` to read state directly from the Redux store inside components
-- Used `useDispatch` to dispatch actions from components to update state
+- Used `combineReducers` to split the root reducer into multiple slice reducers
+- Managed different parts of the Redux state independently for better maintainability
+- Continued using Redux Hooks (`useSelector` and `useDispatch`) to interact with the combined state
 
 ---
 
 ### **Resources**
 
-- [Redux Hooks API](https://react-redux.js.org/api/hooks)
+- [Redux combineReducers API](https://redux.js.org/api/combineReducers)
 
 ---
 
@@ -49,7 +49,7 @@ Follow these steps to run this branch in your machine:
 3. **Switch to this branch:**
 
    ```bash
-   git checkout redux_1.6
+   git checkout redux_1.7
    ```
 
 4. **Install dependencies:**
