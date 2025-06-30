@@ -1,16 +1,16 @@
 # **Bit By Bit** - Fullstack Learning Journey
 
-## **Redux Connect API**
+## **Redux Hooks API**
 
-Setup Redux Connect API
+Setup Redux Hooks API
 
 ---
 
-## **redux_1.5** Branch Overview
+## **redux_1.6** Branch Overview
 
-Welcome to **redux_1.5** of the **Bit By Bit!**
+Welcome to **redux_1.6** of the **Bit By Bit!**
 
-In this branch, I have practiced the connect API of the Redux, and controlled the counter state using the connect API.
+In this branch, I have practiced using the Redux Hooks API, and controlled the counter state using the `useSelector` and `useDispatch` hooks.
 
 ---
 
@@ -18,15 +18,15 @@ In this branch, I have practiced the connect API of the Redux, and controlled th
 
 ### **Key Topics Covered**
 
-- Implemented Redux Connect API to connect React components with Redux store
-- Used `mapStateToProps` to map state from the Redux store to component props
-- Used `mapDispatchToProps` to map dispatch actions to component props
+- Implemented Redux Hooks API to connect React components with the Redux store
+- Used `useSelector` to read state directly from the Redux store inside components
+- Used `useDispatch` to dispatch actions from components to update state
 
 ---
 
 ### **Resources**
 
-- [connect()](https://react-redux.js.org/api/connect)
+- [Redux Hooks API](https://react-redux.js.org/api/hooks)
 
 ---
 
@@ -49,7 +49,7 @@ Follow these steps to run this branch in your machine:
 3. **Switch to this branch:**
 
    ```bash
-   git checkout redux_1.5
+   git checkout redux_1.6
    ```
 
 4. **Install dependencies:**

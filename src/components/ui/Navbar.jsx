@@ -18,7 +18,7 @@ export default function Navbar() {
     >
       <div className="text-2xl font-extrabold tracking-tight">Bit By Bit</div>
 
-      <ul className="flex gap-8 text-lg font-medium">
+      <ul className="flex gap-8 text-lg font-medium items-center">
         <li>
           <a
             href="/"
@@ -27,11 +27,10 @@ export default function Navbar() {
             Home
           </a>
         </li>
-      </ul>
-
-      <Button
-        onClick={() => setTheme(!theme)}
-        className="
+        <li>
+          <Button
+            onClick={() => setTheme(!theme)}
+            className="cursor-pointer
           flex items-center justify-center
           border border-gray-300 dark:border-gray-600
           px-3 py-2
@@ -39,9 +38,11 @@ export default function Navbar() {
           hover:bg-gray-100 dark:hover:bg-gray-800
           transition-colors duration-300
         "
-      >
-        {theme === true ? <Moon size={20} /> : <Sun size={20} />}
-      </Button>
+          >
+            {theme === true ? <Moon size={20} /> : <Sun size={20} />}
+          </Button>
+        </li>
+      </ul>
     </nav>
   );
 }
