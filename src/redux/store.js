@@ -1,6 +1,4 @@
-import { applyMiddleware, createStore } from 'redux';
-import logger from './middlewares/logger';
-import logNext from './middlewares/logNext';
-import { rootReducer } from './rootReducer';
+import { createStore } from 'redux';
+import bookingReducer from './reducers/booking/bookingReducer';
 
-export const store = createStore(rootReducer, applyMiddleware(logger, logNext));
+export const store = createStore(bookingReducer);

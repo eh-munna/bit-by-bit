@@ -1,16 +1,17 @@
 # **Bit By Bit** - Fullstack Learning Journey
 
-## **Redux Middleware API**
+## **Redux Booking Management**
 
-Explore Redux middleware to extend the store’s dispatch mechanism.
+Manage booking data using Redux reducers for a predictable and centralized state.
 
 ---
 
-## **redux_1.8** Branch Overview
+## **redux_1.9** Branch Overview
 
-Welcome to **redux_1.8** of **Bit By Bit!**
+Welcome to **redux_1.9** of **Bit By Bit!**
 
-In this branch, I practiced creating and using Redux middleware to intercept and modify actions, add logging, and enhancing Redux’s core capabilities.
+In this branch, I focused on building Redux reducers to add and delete bookings in the global state.  
+This implementation allows efficient management of booking entries with immutable state updates and clear action handling.
 
 ---
 
@@ -18,15 +19,17 @@ In this branch, I practiced creating and using Redux middleware to intercept and
 
 ### **Key Topics Covered**
 
-- Implemented custom Redux middleware to log actions and state changes
-- Learned how middleware wraps the dispatch function to add behavior before and after actions
+- Created reducers to add new bookings to the store
+- Implemented booking deletion logic via Redux actions
+- Practiced managing arrays immutably in reducers for state consistency
+- Connected React components to Redux for dispatching and selecting booking data
 
 ---
 
 ### **Resources**
 
-- [Redux Middleware Documentation](https://redux.js.org/understanding/thinking-in-redux/advanced-middleware)
-- [Redux Middleware Example Logger](https://github.com/reduxjs/redux-logger)
+- [Redux Reducers Documentation](https://redux.js.org/tutorials/fundamentals/part-3-state-actions-reducers)
+- [Redux Actions and Reducers](https://redux.js.org/tutorials/fundamentals/part-2-concepts-data-flow)
 
 ---
 
@@ -49,7 +52,7 @@ Follow these steps to run this branch in your machine:
 3. **Switch to this branch:**
 
    ```bash
-   git checkout redux_1.8
+   git checkout redux_1.9
    ```
 
 4. **Install dependencies:**

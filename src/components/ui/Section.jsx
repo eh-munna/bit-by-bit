@@ -1,6 +1,8 @@
-export default function Section({ children, ...props }) {
+import { cn } from '../../utils/cn';
+
+export default function Section({ children, className, ...props }) {
   return (
-    <section className="p-4 flex flex-col" {...props}>
+    <section className={cn(`p-4 flex flex-col`, className)} {...props}>
       {children}
     </section>
   );
