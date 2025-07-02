@@ -1,16 +1,16 @@
 # **Bit By Bit** - Fullstack Learning Journey
 
-## **Redux combineReducers API**
+## **Redux Middleware API**
 
-Setup Redux combineReducers API
+Explore Redux middleware to extend the store’s dispatch mechanism.
 
 ---
 
-## **redux_1.7** Branch Overview
+## **redux_1.8** Branch Overview
 
-Welcome to **redux_1.7** of the **Bit By Bit!**
+Welcome to **redux_1.8** of **Bit By Bit!**
 
-In this branch, I have practiced organizing Redux state using the `combineReducers` function to manage multiple slices of state in a scalable way.
+In this branch, I practiced creating and using Redux middleware to intercept and modify actions, add logging, and enhancing Redux’s core capabilities.
 
 ---
 
@@ -18,15 +18,15 @@ In this branch, I have practiced organizing Redux state using the `combineReduce
 
 ### **Key Topics Covered**
 
-- Used `combineReducers` to split the root reducer into multiple slice reducers
-- Managed different parts of the Redux state independently for better maintainability
-- Continued using Redux Hooks (`useSelector` and `useDispatch`) to interact with the combined state
+- Implemented custom Redux middleware to log actions and state changes
+- Learned how middleware wraps the dispatch function to add behavior before and after actions
 
 ---
 
 ### **Resources**
 
-- [Redux combineReducers API](https://redux.js.org/api/combineReducers)
+- [Redux Middleware Documentation](https://redux.js.org/understanding/thinking-in-redux/advanced-middleware)
+- [Redux Middleware Example Logger](https://github.com/reduxjs/redux-logger)
 
 ---
 
@@ -49,7 +49,7 @@ Follow these steps to run this branch in your machine:
 3. **Switch to this branch:**
 
    ```bash
-   git checkout redux_1.7
+   git checkout redux_1.8
    ```
 
 4. **Install dependencies:**
