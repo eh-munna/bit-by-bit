@@ -1,17 +1,17 @@
 # **Bit By Bit** - Fullstack Learning Journey
 
-## **Redux Booking Management**
+## **Redux To-Do Management**
 
-Manage booking data using Redux reducers for a predictable and centralized state.
+Manage a dynamic to-do list using Redux reducers for a predictable and centralized application state.
 
 ---
 
-## **redux_1.9** Branch Overview
+## **redux_2.1** Branch Overview
 
-Welcome to **redux_1.9** of **Bit By Bit!**
+Welcome to **redux_2.1** of **Bit By Bit!**
 
-In this branch, I focused on building Redux reducers to add and delete bookings in the global state.  
-This implementation allows efficient management of booking entries with immutable state updates and clear action handling.
+In this branch, I focused on building Redux reducers to manage a complete to-do list application.  
+This implementation allows users to efficiently add and delete tasks, clear completed items, and filter tasks by status or color — all while maintaining immutable state updates and clear action handling.
 
 ---
 
@@ -19,10 +19,13 @@ This implementation allows efficient management of booking entries with immutabl
 
 ### **Key Topics Covered**
 
-- Created reducers to add new bookings to the store
-- Implemented booking deletion logic via Redux actions
+- Created reducers to add new tasks to the Redux store
+- Implemented deletion logic for individual tasks
+- Added functionality to clear all completed tasks
 - Practiced managing arrays immutably in reducers for state consistency
-- Connected React components to Redux for dispatching and selecting booking data
+- Built filtering logic for tasks based on status (complete/incomplete/all)
+- Implemented color-based task filtering for priority management
+- Connected React components to Redux for dispatching actions and selecting task data
 
 ---
 
@@ -52,7 +55,7 @@ Follow these steps to run this branch in your machine:
 3. **Switch to this branch:**
 
    ```bash
-   git checkout redux_1.9
+   git checkout redux_2.1
    ```
 
 4. **Install dependencies:**

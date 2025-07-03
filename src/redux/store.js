@@ -1,4 +1,4 @@
 import { createStore } from 'redux';
-import bookingReducer from './reducers/booking/bookingReducer';
+import { rootReducer } from './reducers/rootReducer';
 
-export const store = createStore(bookingReducer);
+export const store = createStore(rootReducer);
