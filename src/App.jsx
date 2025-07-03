@@ -1,39 +1,46 @@
 import Footer from '@/components/layout/Footer';
 import Header from '@/components/layout/Header';
 import Feature from '@/components/ui/Feature';
-import TaskBoard from './components/TaskBoard';
+import ProductBoard from './components/ProductBoard';
 
 export default function App() {
   return (
     <>
       <Header />
 
-      <main className="container py-6 min-h-screen px-4 max-w-7xl mx-auto">
+      <main className="container py-6 min-h-screen px-4 w-full mx-auto">
         <Feature>
-          <h1 className="text-3xl font-bold mb-4">Redux To-Do Management</h1>
+          <h1 className="text-3xl font-bold mb-4">
+            Redux Product & Cart Management
+          </h1>
 
           <p className="text-lg text-gray-700 dark:text-gray-300 mb-6">
-            In this section, Redux is used to manage your to-do list through
-            reducer logic. Tasks are stored in the global state, enabling users
-            to
+            This application uses Redux to manage your product inventory and
+            shopping cart seamlessly. You can
             <code className="bg-gray-100 dark:bg-gray-800 px-1 mx-1 rounded">
               add
             </code>
-            new tasks,
+            new products into stock, track
             <code className="bg-gray-100 dark:bg-gray-800 px-1 mx-1 rounded">
-              delete
+              inventory levels
             </code>
-            existing tasks, and
+            in real time, and
             <code className="bg-gray-100 dark:bg-gray-800 px-1 mx-1 rounded">
-              clear
+              add
             </code>
-            all completed items efficiently. The app also provides
+            products to your shopping cart. Each time a product is added to the
+            cart, the available stock is automatically reduced, ensuring
+            accurate inventory management. The cart displays
             <code className="bg-gray-100 dark:bg-gray-800 px-1 mx-1 rounded">
-              filtering
+              total quantities
             </code>
-            options based on task completion status and color-coded priorities.
-            Each action updates the Redux store predictably, keeping the entire
-            to-do list centralized and consistent across your application.
+            and
+            <code className="bg-gray-100 dark:bg-gray-800 px-1 mx-1 rounded">
+              total prices
+            </code>
+            for a clear overview of your current purchases. All actions update
+            the Redux store predictably, keeping your product and cart data
+            centralized and consistent throughout the application.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4">
@@ -47,7 +54,7 @@ export default function App() {
             </a>
 
             <a
-              href="https://github.com/eh-munna/bit-by-bit/tree/redux_2.1"
+              href="https://github.com/eh-munna/bit-by-bit/tree/redux_2.2"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block px-5 py-2 rounded border border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white transition-colors duration-300"
@@ -58,7 +65,7 @@ export default function App() {
         </Feature>
 
         <Feature>
-          <TaskBoard />
+          <ProductBoard />
         </Feature>
       </main>
 

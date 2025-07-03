@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-import { filterReducer } from './filters/filterReducer';
-import { todoReducer } from './todos/todoReducer';
+import { cartReducer } from './cart/cartReducer';
+import { productReducer } from './products/productReducer';
 
 export const rootReducer = combineReducers({
-  todos: todoReducer,
-  filters: filterReducer,
+  products: productReducer,
+  cart: cartReducer,
 });

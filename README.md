@@ -1,17 +1,17 @@
 # **Bit By Bit** - Fullstack Learning Journey
 
-## **Redux To-Do Management**
+## **Redux Product & Cart Management**
 
-Manage a dynamic to-do list using Redux reducers for a predictable and centralized application state.
+Manage your product inventory and shopping cart using Redux reducers for a predictable and centralized application state.
 
 ---
 
-## **redux_2.1** Branch Overview
+## **redux_2.2** Branch Overview
 
-Welcome to **redux_2.1** of **Bit By Bit!**
+Welcome to **redux_2.2** of **Bit By Bit!**
 
-In this branch, I focused on building Redux reducers to manage a complete to-do list application.  
-This implementation allows users to efficiently add and delete tasks, clear completed items, and filter tasks by status or color — all while maintaining immutable state updates and clear action handling.
+In this branch, I focused on building Redux reducers to manage a complete product and cart management system.
+This implementation allows users to efficiently add new products to the inventory, add products to the shopping cart, and automatically adjust stock levels — all while maintaining immutable state updates and clear action handling.
 
 ---
 
@@ -19,13 +19,13 @@ This implementation allows users to efficiently add and delete tasks, clear comp
 
 ### **Key Topics Covered**
 
-- Created reducers to add new tasks to the Redux store
-- Implemented deletion logic for individual tasks
-- Added functionality to clear all completed tasks
-- Practiced managing arrays immutably in reducers for state consistency
-- Built filtering logic for tasks based on status (complete/incomplete/all)
-- Implemented color-based task filtering for priority management
-- Connected React components to Redux for dispatching actions and selecting task data
+- Created reducers to add new products into the Redux store
+- Implemented logic to add products to the shopping cart
+- Built functionality to reduce product stock when items are added to the cart
+- Practiced managing arrays and objects immutably in reducers for consistent state updates
+- Calculated total quantities and prices in the cart for purchase summaries
+- Connected React components to Redux for dispatching actions and selecting product and cart data
+- Developed reusable UI components for displaying products, inventory levels, and cart details
 
 ---
 
@@ -55,7 +55,7 @@ Follow these steps to run this branch in your machine:
 3. **Switch to this branch:**
 
    ```bash
-   git checkout redux_2.1
+   git checkout redux_2.2
    ```
 
 4. **Install dependencies:**
