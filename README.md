@@ -51,7 +51,7 @@ Follow these steps to run this branch in your machine:
 3. **Switch to this branch:**
 
    ```bash
-   git checkout redux_4.1
+   git checkout redux_4.2
    ```
 
 4. **Install dependencies:**
