@@ -1,5 +1,6 @@
 import { applyMiddleware, createStore } from 'redux';
-import { fetchTodos } from './middlewares.js';
+import fetchTodos from './actions.js';
+import { fetchingMiddleware } from './middlewares.js';
 const initialState = {
   todos: [],
 };
@@ -25,7 +26,7 @@ const todoReducer = (state = initialState, action) => {
   }
 };
 
-const store = createStore(todoReducer, applyMiddleware(fetchTodos));
+const store = createStore(todoReducer, applyMiddleware(fetchingMiddleware));
 
 store.subscribe(() => {
   console.log(store.getState());
@@ -39,6 +40,4 @@ store.dispatch({
   },
 });
 
-store.dispatch({
-  type: 'todos/FETCH_TODOS',
-});
+store.dispatch(fetchTodos);

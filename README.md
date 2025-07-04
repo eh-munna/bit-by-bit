@@ -6,11 +6,11 @@ Fetch data from a server using Redux.
 
 ---
 
-## **redux_4.1** Branch Overview
+## **redux_4.2** Branch Overview
 
-Welcome to **redux_4.1** of **Bit By Bit!**
+Welcome to **redux_4.2** of **Bit By Bit!**
 
-In this branch, I focused on practicing how to fetch data from a server using Redux actions and how to manage asynchronous flows in Redux. This implementation allows the application to request todo data from an API, store it in the Redux store.
+In this branch, I practiced fetching data from a server in Redux using custom middleware to handle asynchronous logic. The implementation allows the application to request todo data from an external API and store it in the Redux store. I created a custom `fetchingMiddleware` that checks if a dispatched action is a function and invokes it, enabling async flows similar to Redux Thunk.
 
 ---
 
@@ -18,15 +18,17 @@ In this branch, I focused on practicing how to fetch data from a server using Re
 
 ### **Key Topics Covered**
 
-- Created asynchronous actions to fetch todo data from an API
-- Practiced updating state immutably based on API responses
-- Reviewed the flow of dispatching actions before, during, and after API calls
+- Implemented custom middleware to support dispatching async functions
+- Created an asynchronous action (thunk) to fetch todo data from an API
+- Practiced updating the Redux store immutably with the fetched data
+- Reviewed the flow of dispatching regular and async actions in Redux
 
 ---
 
 ### **Resources**
 
 - [Redux Async Logic](https://redux.js.org/tutorials/fundamentals/part-6-async-logic)
+- [Redux Middleware](https://redux.js.org/tutorials/fundamentals/part-4-store#middleware)
 
 ---
 
