@@ -3,19 +3,21 @@ import {
   CLEAR_COMPLETED,
   COMPLETED_ALL,
   DELETE,
+  LOADED,
   SELECTED_COLOR,
   TOGGLE,
 } from './actionTypes';
 
-export const addTodo = (task) => {
-  if (!task.trim()) return;
+export const loaded = (todos) => {
+  return {
+    type: LOADED,
+    payload: todos,
+  };
+};
+export const add = (task) => {
   return {
     type: ADD,
-    payload: {
-      id: crypto.randomUUID(),
-      completed: false,
-      text: task,
-    },
+    payload: task,
   };
 };
 

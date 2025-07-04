@@ -3,6 +3,7 @@ import {
   CLEAR_COMPLETED,
   COMPLETED_ALL,
   DELETE,
+  LOADED,
   SELECTED_COLOR,
   TOGGLE,
 } from './actionTypes';
@@ -10,6 +11,10 @@ import {
 const todos = [];
 export const todoReducer = (state = todos, action) => {
   switch (action.type) {
+    case LOADED: {
+      return [...action.payload];
+    }
+
     case ADD: {
       return [...state, action.payload];
     }
@@ -28,7 +33,6 @@ export const todoReducer = (state = todos, action) => {
 
     case SELECTED_COLOR: {
       const { todoId, color } = action.payload;
-      console.log(todoId, color);
 
       return state.map((todo) => {
         if (todo.id === todoId) {

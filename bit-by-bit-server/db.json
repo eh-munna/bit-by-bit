@@ -1,0 +1,36 @@
+{
+  "todos": [
+    {
+      "id": "a1b2c3d4-1234-5678-9abc-def0123456789",
+      "completed": false,
+      "text": "Learn Redux basics",
+      "color": "red"
+    },
+    {
+      "id": "b2c3d4e5-2345-6789-abcd-ef1234567890",
+      "completed": false,
+      "text": "Write unit tests for reducers",
+      "color": "red"
+    },
+    {
+      "id": "c3d4e5f6-3456-789a-bcde-f23456789012",
+      "completed": false,
+      "text": "Implement custom middleware"
+    },
+    {
+      "id": "d4e5f6g7-4567-89ab-cdef-345678901234",
+      "completed": false,
+      "text": "Refactor code for async actions"
+    },
+    {
+      "id": "e5f6g7h8-5678-9abc-def0-456789012345",
+      "completed": false,
+      "text": "Document Redux store setup"
+    },
+    {
+      "id": "f6g7h8i9-6789-abcd-ef01-567890123456",
+      "completed": false,
+      "text": "Research Redux Toolkit"
+    }
+  ]
+}

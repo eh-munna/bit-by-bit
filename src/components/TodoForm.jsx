@@ -1,8 +1,8 @@
-import Button from '@/components/ui/Button';
 import { Check } from 'lucide-react';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { addTodo } from '../redux/reducers/todos/actions';
+import { addTodo } from '../redux/reducers/todos/thunks';
+import Button from './ui/Button';
 
 export default function TodoForm() {
   const [newTask, setNewTask] = useState('');

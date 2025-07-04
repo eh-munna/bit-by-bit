@@ -1,17 +1,16 @@
 # **Bit By Bit** - Fullstack Learning Journey
 
-## **Redux To-Do Management**
+## **Redux To-Do Management with API Integration**
 
-Manage a dynamic to-do list using Redux reducers for a predictable and centralized application state.
+Manage a dynamic to-do list using Redux reducers and asynchronous API calls via Redux Thunk, ensuring a predictable and centralized application state.
 
 ---
 
-## **redux_2.1** Branch Overview
+## **redux_4.3** Branch Overview
 
-Welcome to **redux_2.1** of **Bit By Bit!**
+Welcome to **redux_4.3** of **Bit By Bit!**
 
-In this branch, I focused on building Redux reducers to manage a complete to-do list application.  
-This implementation allows users to efficiently add and delete tasks, clear completed items, and filter tasks by status or color — all while maintaining immutable state updates and clear action handling.
+In this branch, I focused on building a complete to-do list application that interacts with an external API. The application fetches, creates, updates, and deletes tasks through HTTP requests handled by Redux Thunk middleware. All fetched data is stored in the Redux state, providing a single source of truth for UI components.
 
 ---
 
@@ -19,20 +18,22 @@ This implementation allows users to efficiently add and delete tasks, clear comp
 
 ### **Key Topics Covered**
 
-- Created reducers to add new tasks to the Redux store
-- Implemented deletion logic for individual tasks
-- Added functionality to clear all completed tasks
-- Practiced managing arrays immutably in reducers for state consistency
-- Built filtering logic for tasks based on status (complete/incomplete/all)
+- Fetched to-do data from an API using Redux Thunk for async logic
+- Created reducers to add new tasks to the Redux store from API responses
+- Implemented deletion logic for individual tasks both on the server and in the store
+- Added functionality to clear all completed tasks via API calls
+- Managed arrays immutably in reducers for consistent and predictable state updates
+- Built filtering logic for tasks based on completion status (complete, incomplete, all)
 - Implemented color-based task filtering for priority management
-- Connected React components to Redux for dispatching actions and selecting task data
+- Connected React components to Redux for dispatching async actions and selecting task data from the store
 
 ---
 
 ### **Resources**
 
+- [Redux Thunk Documentation](https://redux.js.org/tutorials/fundamentals/part-6-async-logic)
 - [Redux Reducers Documentation](https://redux.js.org/tutorials/fundamentals/part-3-state-actions-reducers)
-- [Redux Actions and Reducers](https://redux.js.org/tutorials/fundamentals/part-2-concepts-data-flow)
+- [Redux Actions and Data Flow](https://redux.js.org/tutorials/fundamentals/part-2-concepts-data-flow)
 
 ---
 
@@ -55,7 +56,7 @@ Follow these steps to run this branch in your machine:
 3. **Switch to this branch:**
 
    ```bash
-   git checkout redux_2.1
+   git checkout redux_4.3
    ```
 
 4. **Install dependencies:**

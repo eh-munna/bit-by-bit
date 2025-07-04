@@ -2,10 +2,10 @@ import { Trash } from 'lucide-react';
 import { useDispatch } from 'react-redux';
 
 import {
-  deleteTodo,
-  selectColor,
-  toggleComplete,
-} from '../redux/reducers/todos/actions';
+  changeColor,
+  removeTodo,
+  toggleStatus,
+} from '../redux/reducers/todos/thunks';
 import { cn } from '../utils/cn';
 import Button from './ui/Button';
 
@@ -21,16 +21,16 @@ export default function TodoItem({ todo }) {
   const dispatch = useDispatch();
   const { id, text, completed, color } = todo;
 
-  const handleChange = () => {
-    dispatch(toggleComplete(id));
+  const handleStatusChange = (id) => {
+    dispatch(toggleStatus(id, completed));
   };
 
-  const handleDelete = () => {
-    dispatch(deleteTodo(id));
+  const handleDelete = (id) => {
+    dispatch(removeTodo(id));
   };
 
   const handleColorChange = (id, color) => {
-    dispatch(selectColor(id, color));
+    dispatch(changeColor(id, color));
   };
 
   return (
@@ -39,7 +39,7 @@ export default function TodoItem({ todo }) {
         <input
           type="checkbox"
           checked={completed}
-          onChange={handleChange}
+          onChange={() => handleStatusChange(id)}
           className="w-5 h-5 rounded border-gray-400 dark:border-gray-600 text-blue-600 focus:ring-blue-500"
         />
 
@@ -69,7 +69,7 @@ export default function TodoItem({ todo }) {
         ))}
 
         <Button
-          onClick={handleDelete}
+          onClick={() => handleDelete(id)}
           className="bg-transparent text-red-600 hover:text-red-700 dark:hover:text-red-400"
           aria-label={`Delete task: ${text}`}
         >

@@ -16,7 +16,8 @@ const COLOR_CLASSES = {
 
 export default function FilterButtons() {
   const dispatch = useDispatch();
-  const { todos, filters } = useSelector((state) => state);
+  const todos = useSelector((state) => state.todos);
+  const filters = useSelector((state) => state.filters);
   const { status, colors } = filters;
 
   const handleStatusChange = (status) => {
