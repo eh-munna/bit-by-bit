@@ -1,17 +1,16 @@
 # **Bit By Bit** - Fullstack Learning Journey
 
-## **Redux Product & Cart Management**
+## **Redux: Simple Data Fetching**
 
-Manage your product inventory and shopping cart using Redux reducers for a predictable and centralized application state.
+Fetch data from a server using Redux.
 
 ---
 
-## **redux_2.2** Branch Overview
+## **redux_4.1** Branch Overview
 
-Welcome to **redux_2.2** of **Bit By Bit!**
+Welcome to **redux_4.1** of **Bit By Bit!**
 
-In this branch, I focused on building Redux reducers to manage a complete product and cart management system.
-This implementation allows users to efficiently add new products to the inventory, add products to the shopping cart, and automatically adjust stock levels — all while maintaining immutable state updates and clear action handling.
+In this branch, I focused on practicing how to fetch data from a server using Redux actions and how to manage asynchronous flows in Redux. This implementation allows the application to request todo data from an API, store it in the Redux store.
 
 ---
 
@@ -19,20 +18,15 @@ This implementation allows users to efficiently add new products to the inventor
 
 ### **Key Topics Covered**
 
-- Created reducers to add new products into the Redux store
-- Implemented logic to add products to the shopping cart
-- Built functionality to reduce product stock when items are added to the cart
-- Practiced managing arrays and objects immutably in reducers for consistent state updates
-- Calculated total quantities and prices in the cart for purchase summaries
-- Connected React components to Redux for dispatching actions and selecting product and cart data
-- Developed reusable UI components for displaying products, inventory levels, and cart details
+- Created asynchronous actions to fetch todo data from an API
+- Practiced updating state immutably based on API responses
+- Reviewed the flow of dispatching actions before, during, and after API calls
 
 ---
 
 ### **Resources**
 
-- [Redux Reducers Documentation](https://redux.js.org/tutorials/fundamentals/part-3-state-actions-reducers)
-- [Redux Actions and Reducers](https://redux.js.org/tutorials/fundamentals/part-2-concepts-data-flow)
+- [Redux Async Logic](https://redux.js.org/tutorials/fundamentals/part-6-async-logic)
 
 ---
 
@@ -55,7 +49,7 @@ Follow these steps to run this branch in your machine:
 3. **Switch to this branch:**
 
    ```bash
-   git checkout redux_2.2
+   git checkout redux_4.1
    ```
 
 4. **Install dependencies:**
