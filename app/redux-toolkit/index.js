@@ -1,7 +1,4 @@
-import {
-  decrement,
-  increment,
-} from './redux-toolkit/features/counter/counterSlice.js';
+import { decrement, increment } from './features/counter/counterSlice.js';
 import { store } from './store.js';
 
 store.subscribe(() => {
