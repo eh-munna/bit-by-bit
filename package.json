@@ -1,0 +1,25 @@
+{
+  "name": "bit-by-bit",
+  "version": "1.0.0",
+  "description": "Welcome to my personal learning repo where I document my journey with:",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eh-munna/bit-by-bit.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/eh-munna/bit-by-bit/issues"
+  },
+  "homepage": "https://github.com/eh-munna/bit-by-bit#readme",
+  "dependencies": {
+    "@reduxjs/toolkit": "^2.8.2",
+    "redux": "^5.0.1"
+  }
+}
