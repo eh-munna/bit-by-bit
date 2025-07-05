@@ -1,8 +1,5 @@
-import { combineReducers, createStore } from 'redux';
-import { counterReducer } from './Counter/counterReducer.js';
+import { applyMiddleware, createStore } from 'redux';
+import { thunk } from 'redux-thunk';
+import { rootReducer } from './todos/todoReducer.js';
 
-const rootReducer = combineReducers({
-  counter: counterReducer,
-});
-
-export const store = createStore(rootReducer);
+export const store = createStore(rootReducer, applyMiddleware(thunk));

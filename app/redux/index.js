@@ -1,20 +1,8 @@
-import { decrement, increment } from './Counter/actions.js';
 import { store } from './store.js';
+import { fetchTodos } from './todos/actions.js';
 
 store.subscribe(() => {
   console.log(store.getState());
 });
 
-console.log(`Start Incrementing...`);
-console.log(`_____________________`);
-store.dispatch(increment());
-store.dispatch(increment());
-store.dispatch(increment());
-store.dispatch(increment());
-store.dispatch(increment());
-console.log(`------------------------------------`);
-console.log(`Start Decrementing...`);
-console.log(`_____________________`);
-store.dispatch(decrement());
-store.dispatch(decrement());
-store.dispatch(decrement());
+store.dispatch(fetchTodos());
