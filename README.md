@@ -1,40 +1,36 @@
 # **Bit By Bit** - Fullstack Learning Journey
 
-## **Video Hosting with Tag-Based Filtering and Related Content**
+## **Expense Tracker with Redux Toolkit**
 
-Build a dynamic video hosting platform where users can explore videos filtered by tags and discover related content seamlessly, all managed through a robust Redux Toolkit architecture with asynchronous data fetching.
-
----
-
-## **redux_6.1** Branch Overview
-
-Welcome to **redux_6.1** of **Bit By Bit!**
-
-In this branch, I developed a complete video hosting application that fetches and displays videos from an API. Users can:
-
-- Filter videos dynamically by selected tags
-- Open a video to view detailed information
-- Automatically load and display related videos based on tags or context
-
-All state management and data fetching are handled by **Redux Toolkit**, ensuring a predictable, centralized, and scalable application state.
+This branch implements a dynamic **Expense Tracker** application using **Redux Toolkit** for efficient state management.
 
 ---
 
-## **Branch Organization**
+## **Branch: `redux_7.1` Overview**
 
-### **Key Topics Covered**
+Welcome to **`redux_7.1`** of **Bit By Bit!**
 
-- Fetched video data from an API using **Redux Thunk** for asynchronous logic
-- Managed video collections and individual video details in **Redux slices**
-- Implemented filtering logic to show videos matching user-selected tags
-- Displayed related videos when a video is opened
-- Ensured immutable state updates with **Redux Toolkit createSlice**
-- Connected React components to Redux for:
+In this branch, I’ve built a fully functional CRUD application to manage expenses. Key features include:
+
+- Adding new expenses
+- Viewing the list of expenses
+- Editing existing expenses
+- Deleting expenses
+
+The app leverages **Redux Toolkit** to ensure a predictable, centralized, and scalable application state.
+
+---
+
+## **Key Topics and Features**
+
+- Fetch expenses data from an API using **Redux Thunk** for asynchronous operations
+- Maintain immutable state updates with `createSlice` from Redux Toolkit
+- Integrate React components with Redux for:
 
   - Dispatching async thunks
-  - Selecting video data and UI state
+  - Managing UI updates when editing or deleting expenses
 
-- Handled loading and error states gracefully for improved user experience
+- Implement graceful handling of loading and error states for a smoother user experience
 
 ---
 
@@ -66,7 +62,7 @@ Follow these steps to run this branch in your machine:
 3. **Switch to this branch:**
 
    ```bash
-   git checkout redux_5.3
+   git checkout redux_7.1
    ```
 
 4. **Install dependencies:**
