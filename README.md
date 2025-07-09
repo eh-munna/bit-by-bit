@@ -1,16 +1,22 @@
 # **Bit By Bit** - Fullstack Learning Journey
 
-## **Redux To-Do Management with API Integration**
+## **Video Hosting with Tag-Based Filtering and Related Content**
 
-Manage a dynamic to-do list using Redux reducers and asynchronous API calls via Redux Thunk, ensuring a predictable and centralized application state.
+Build a dynamic video hosting platform where users can explore videos filtered by tags and discover related content seamlessly, all managed through a robust Redux Toolkit architecture with asynchronous data fetching.
 
 ---
 
-## **redux_4.3** Branch Overview
+## **redux_6.1** Branch Overview
 
-Welcome to **redux_4.3** of **Bit By Bit!**
+Welcome to **redux_6.1** of **Bit By Bit!**
 
-In this branch, I focused on building a complete to-do list application that interacts with an external API. The application fetches, creates, updates, and deletes tasks through HTTP requests handled by Redux Thunk middleware. All fetched data is stored in the Redux state, providing a single source of truth for UI components.
+In this branch, I developed a complete video hosting application that fetches and displays videos from an API. Users can:
+
+- Filter videos dynamically by selected tags
+- Open a video to view detailed information
+- Automatically load and display related videos based on tags or context
+
+All state management and data fetching are handled by **Redux Toolkit**, ensuring a predictable, centralized, and scalable application state.
 
 ---
 
@@ -18,22 +24,26 @@ In this branch, I focused on building a complete to-do list application that int
 
 ### **Key Topics Covered**
 
-- Fetched to-do data from an API using Redux Thunk for async logic
-- Created reducers to add new tasks to the Redux store from API responses
-- Implemented deletion logic for individual tasks both on the server and in the store
-- Added functionality to clear all completed tasks via API calls
-- Managed arrays immutably in reducers for consistent and predictable state updates
-- Built filtering logic for tasks based on completion status (complete, incomplete, all)
-- Implemented color-based task filtering for priority management
-- Connected React components to Redux for dispatching async actions and selecting task data from the store
+- Fetched video data from an API using **Redux Thunk** for asynchronous logic
+- Managed video collections and individual video details in **Redux slices**
+- Implemented filtering logic to show videos matching user-selected tags
+- Displayed related videos when a video is opened
+- Ensured immutable state updates with **Redux Toolkit createSlice**
+- Connected React components to Redux for:
+
+  - Dispatching async thunks
+  - Selecting video data and UI state
+
+- Handled loading and error states gracefully for improved user experience
 
 ---
 
-### **Resources**
+## **Resources**
 
-- [Redux Thunk Documentation](https://redux.js.org/tutorials/fundamentals/part-6-async-logic)
-- [Redux Reducers Documentation](https://redux.js.org/tutorials/fundamentals/part-3-state-actions-reducers)
-- [Redux Actions and Data Flow](https://redux.js.org/tutorials/fundamentals/part-2-concepts-data-flow)
+- [Redux Toolkit Documentation](https://redux-toolkit.js.org/introduction/getting-started)
+- [Redux Thunk Middleware](https://redux.js.org/usage/writing-logic-thunks)
+- [Redux Data Flow Overview](https://redux.js.org/tutorials/fundamentals/part-2-concepts-data-flow)
+- [Using createAsyncThunk](https://redux-toolkit.js.org/api/createAsyncThunk)
 
 ---
 
@@ -56,7 +66,7 @@ Follow these steps to run this branch in your machine:
 3. **Switch to this branch:**
 
    ```bash
-   git checkout redux_4.3
+   git checkout redux_5.3
    ```
 
 4. **Install dependencies:**

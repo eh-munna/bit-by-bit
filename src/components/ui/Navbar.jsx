@@ -1,6 +1,7 @@
 import Button from '@/components/ui/Button';
 import { useTheme } from '@/contexts/index.jsx';
 import { Moon, Sun } from 'lucide-react';
+import { Link } from 'react-router';
 
 export default function Navbar() {
   const { theme, setTheme } = useTheme();
@@ -16,16 +17,18 @@ export default function Navbar() {
         transition-colors duration-300
       "
     >
-      <div className="text-2xl font-extrabold tracking-tight">Bit By Bit</div>
+      <div className="text-2xl font-extrabold tracking-tight">
+        <Link to="/">Bit By Bit</Link>
+      </div>
 
       <ul className="flex gap-8 text-lg font-medium items-center">
         <li>
-          <a
-            href="/"
+          <Link
+            to="/"
             className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
           >
             Home
-          </a>
+          </Link>
         </li>
         <li>
           <Button
