@@ -1,26 +1,14 @@
-import { useEffect, useState } from 'react';
-import { axiosPublic } from '../../../utils/axiosPublic';
 import Balance from './Balance';
 import ExpenseForm from './ExpenseForm';
 
+import { useSelector } from 'react-redux';
 import Transactions from './Transactions/Transactions';
 
 export default function ExpenseTracker() {
-  const [transactions, setTransactions] = useState([]);
-
-  useEffect(() => {
-    (async () => {
-      const { data } = await axiosPublic.get('/transactions');
-      setTransactions(data);
-    })();
-  }, []);
-
-  const handleDelete = (id) => {
-    setTransactions(transactions.filter((t) => t.id !== id));
-  };
+  const { transactions } = useSelector((state) => state.transaction);
 
   const totalBalance = transactions
-    .reduce((acc, transaction) => {
+    ?.reduce((acc, transaction) => {
       return transaction.type === 'income'
         ? acc + transaction.amount
         : acc - transaction.amount;
@@ -33,11 +21,8 @@ export default function ExpenseTracker() {
         <h1 className="text-2xl font-bold text-center mb-6">Expense Tracker</h1>
         <Balance totalBalance={totalBalance} />
 
-        <ExpenseForm
-          transactions={transactions}
-          setTransactions={setTransactions}
-        />
-        <Transactions transactions={transactions} onDelete={handleDelete} />
+        <ExpenseForm />
+        <Transactions />
       </div>
     </div>
   );

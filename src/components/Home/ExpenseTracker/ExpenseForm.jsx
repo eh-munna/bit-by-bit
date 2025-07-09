@@ -1,11 +1,28 @@
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { addTransaction } from '../../../redux/features/transaction/transactionSlice';
 
-export default function ExpenseForm({ transactions, setTransactions }) {
-  const [name, setName] = useState('');
-  const [type, setType] = useState('income');
-  const [amount, setAmount] = useState('');
+export default function ExpenseForm() {
+  const dispatch = useDispatch();
 
-  const handleAddTransaction = (e) => {
+  const initialTransaction = {
+    name: '',
+    type: 'income',
+    amount: 0,
+  };
+
+  const [transaction, setTransaction] = useState(initialTransaction);
+
+  const handleChange = (e) => {
+    setTransaction((prev) => ({
+      ...prev,
+      [e.target.name]: e.target.value,
+    }));
+  };
+
+  const { name, type, amount } = transaction;
+
+  const handleAddTransaction = async (e) => {
     e.preventDefault();
 
     if (!name || !amount) return;
@@ -17,10 +34,13 @@ export default function ExpenseForm({ transactions, setTransactions }) {
       amount: parseFloat(amount),
     };
 
-    setTransactions([newTransaction, ...transactions]);
-    setName('');
-    setAmount('');
-    setType('income');
+    try {
+      await dispatch(addTransaction(newTransaction)).unwrap();
+      setTransaction(initialTransaction);
+    } catch (err) {
+      console.error('Error saving transaction:', err);
+      // optionally show a toast or UI error message
+    }
   };
 
   return (
@@ -33,8 +53,9 @@ export default function ExpenseForm({ transactions, setTransactions }) {
         <input
           type="text"
           placeholder="Name"
+          name="name"
           value={name}
-          onChange={(e) => setName(e.target.value)}
+          onChange={handleChange}
           className="p-2 rounded border dark:bg-gray-700"
         />
 
@@ -45,7 +66,7 @@ export default function ExpenseForm({ transactions, setTransactions }) {
               name="type"
               value="income"
               checked={type === 'income'}
-              onChange={() => setType('income')}
+              onChange={handleChange}
             />
             Income
           </label>
@@ -55,7 +76,7 @@ export default function ExpenseForm({ transactions, setTransactions }) {
               name="type"
               value="expense"
               checked={type === 'expense'}
-              onChange={() => setType('expense')}
+              onChange={handleChange}
             />
             Expense
           </label>
@@ -64,9 +85,10 @@ export default function ExpenseForm({ transactions, setTransactions }) {
         <input
           type="number"
           step="0.01"
+          name="amount"
           placeholder="Amount"
           value={amount}
-          onChange={(e) => setAmount(e.target.value)}
+          onChange={handleChange}
           className="p-2 rounded border dark:bg-gray-700"
         />
 
