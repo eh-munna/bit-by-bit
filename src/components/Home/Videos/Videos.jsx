@@ -1,19 +1,11 @@
-import { useEffect } from 'react';
-
-import { useDispatch, useSelector } from 'react-redux';
-import { fetchVideos } from '../../../redux/features/videos/videosSlice';
+import { useSelector } from 'react-redux';
+import { useGetVideosQuery } from '../../../redux/features/api/apiSlice';
 import VideoCard from './VideoCard';
 
 export default function Videos() {
-  const { videos, isLoading, isError, error } = useSelector(
-    (state) => state.videos
-  );
   const { tags } = useSelector((state) => state.filter);
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(fetchVideos(tags));
-  }, [dispatch, tags]);
+  const { data: videos, isLoading, isError, error } = useGetVideosQuery(tags);
+  
 
   let content;
 
@@ -33,7 +25,7 @@ export default function Videos() {
         </p>
       </div>
     );
-  } else if (videos.length === 0) {
+  } else if (videos?.length === 0) {
     content = (
       <div className="w-full flex justify-center items-center py-20">
         <p className="text-lg font-medium text-gray-500 dark:text-gray-300">
@@ -44,7 +36,7 @@ export default function Videos() {
   } else {
     content = (
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-        {videos.map((video) => (
+        {videos?.map((video) => (
           <VideoCard key={video.id} video={video} />
         ))}
       </div>

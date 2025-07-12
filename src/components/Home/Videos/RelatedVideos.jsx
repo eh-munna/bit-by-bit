@@ -1,20 +1,12 @@
-import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router';
-import { fetchRelatedVideos } from '../../../redux/features/relatedVideos/relatedVideosSlice';
+import { useGetRelatedVideosQuery } from '../../../redux/features/api/apiSlice';
 
 export default function RelatedVideos({ id, tags }) {
-  const dispatch = useDispatch();
-
-  const { relatedVideos, isLoading, isError, error } = useSelector(
-    (state) => state.relatedVideos
-  );
-
-  useEffect(() => {
-    if (id) {
-      dispatch(fetchRelatedVideos({ id, tags }));
-    }
-  }, [dispatch, id, tags]);
+  const {
+    data: relatedVideos,
+    isLoading,
+    isError,
+  } = useGetRelatedVideosQuery({ id, tags });
 
   let content;
 
@@ -30,7 +22,7 @@ export default function RelatedVideos({ id, tags }) {
     content = (
       <div className="flex justify-center items-center py-10">
         <p className="text-red-500 text-lg">
-          Error: {error || 'Something went wrong!'}
+          Error: {isError || 'Something went wrong!'}
         </p>
       </div>
     );

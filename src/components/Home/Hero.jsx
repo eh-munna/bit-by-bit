@@ -1,3 +1,5 @@
+import { Link } from 'react-router';
+
 export default function Hero() {
   return (
     <div className="w-full bg-white dark:bg-gray-900 text-gray-900 dark:text-slate-200 transition-colors duration-300 py-16 px-8">
@@ -18,12 +20,12 @@ export default function Hero() {
             >
               Browse Videos
             </a>
-            <a
-              href="#upload"
+            <Link
+              to="/videos/add-video"
               className="inline-block border border-gray-900 dark:border-slate-200 text-gray-900 dark:text-slate-200 font-semibold py-3 px-6 rounded hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-300"
             >
               Upload Video
-            </a>
+            </Link>
           </div>
         </div>
       </div>

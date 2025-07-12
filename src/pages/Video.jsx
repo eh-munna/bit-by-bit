@@ -1,19 +1,34 @@
+import { SquarePen, Trash } from 'lucide-react';
 import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { Link, useParams } from 'react-router';
+import { Link, useNavigate, useParams } from 'react-router';
 import RelatedVideos from '../components/Home/Videos/RelatedVideos';
-import { fetchVideo } from '../redux/features/video/videoSlice';
+import {
+  useDeleteVideoMutation,
+  useGetVideoQuery,
+} from '../redux/features/api/apiSlice';
 
 export default function Video() {
-  const dispatch = useDispatch();
-  const { video, isLoading, isError, error } = useSelector(
-    (state) => state.video
-  );
   const { videoId } = useParams();
+  const { data: video, isLoading, isError, error } = useGetVideoQuery(videoId);
+  const [deleteVideo, { isSuccess, isLoading: isDeleting }] =
+    useDeleteVideoMutation();
 
+  const navigate = useNavigate();
+
+  const handleDelete = (id) => {
+    const confirmed = window.confirm(
+      'Are you sure you want to delete this video?'
+    );
+    if (confirmed && videoId) {
+      deleteVideo(id);
+    }
+    return;
+  };
   useEffect(() => {
-    dispatch(fetchVideo(videoId));
-  }, [dispatch, videoId]);
+    if (isSuccess) {
+      navigate('/');
+    }
+  }, [isSuccess, navigate]);
 
   if (isLoading) {
     return (
@@ -93,14 +108,35 @@ export default function Video() {
             </div>
           </div>
 
-          <Link
-            to={video.link}
-            target="_blank"
-            rel="noreferrer"
-            className="mt-4 inline-block px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors text-center"
-          >
-            Watch Video
-          </Link>
+          <div className="flex flex-col gap-4 mt-4">
+            <div className="flex gap-4">
+              <Link
+                to={`/videos/edit-video/${video.id}`}
+                className="flex items-center gap-2 text-sm text-yellow-600 hover:text-yellow-700 dark:text-yellow-400 dark:hover:text-yellow-300"
+              >
+                <SquarePen size={18} />
+                <span>Edit</span>
+              </Link>
+
+              <button
+                disabled={isDeleting}
+                onClick={() => handleDelete(video.id)}
+                className="flex items-center gap-2 text-sm text-red-600 hover:text-red-700 dark:text-red-400 dark:hover:text-red-300"
+              >
+                <Trash size={18} />
+                <span>Delete</span>
+              </button>
+            </div>
+
+            <Link
+              to={video.link}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-block px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors text-center"
+            >
+              Watch Video
+            </Link>
+          </div>
         </div>
       </div>
 

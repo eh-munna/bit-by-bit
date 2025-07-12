@@ -2,48 +2,51 @@
 
 ## **Video Hosting with Tag-Based Filtering and Related Content**
 
-Build a dynamic video hosting platform where users can explore videos filtered by tags and discover related content seamlessly, all managed through a robust Redux Toolkit architecture with asynchronous data fetching.
+Build a dynamic video hosting platform where users can explore videos filtered by tags and discover related content seamlessly, powered by modern Redux Toolkit architecture and efficient data fetching through RTK Query.
 
 ---
 
-## **redux_6.1** Branch Overview
+## **redux_8.1** Branch Overview
 
-Welcome to **redux_6.1** of **Bit By Bit!**
+Welcome to the **redux_8.1** branch of **Bit By Bit!**
 
-In this branch, I developed a complete video hosting application that fetches and displays videos from an API. Users can:
+In this branch, I’ve built a complete video hosting application that retrieves and displays videos from an API. Users can:
 
-- Filter videos dynamically by selected tags
+- Filter videos dynamically by selecting tags
 - Open a video to view detailed information
 - Automatically load and display related videos based on tags or context
 
-All state management and data fetching are handled by **Redux Toolkit**, ensuring a predictable, centralized, and scalable application state.
+All state management and data fetching are now handled by **RTK Query**, simplifying API calls and caching for a more efficient and scalable app.
 
 ---
 
-## **Branch Organization**
+## **Branch Highlights**
 
-### **Key Topics Covered**
+### **Key Features Implemented**
 
-- Fetched video data from an API using **Redux Thunk** for asynchronous logic
-- Managed video collections and individual video details in **Redux slices**
-- Implemented filtering logic to show videos matching user-selected tags
-- Displayed related videos when a video is opened
-- Ensured immutable state updates with **Redux Toolkit createSlice**
-- Connected React components to Redux for:
+- Fetched video data seamlessly from an API using **RTK Query services**
 
-  - Dispatching async thunks
-  - Selecting video data and UI state
+- Managed video collections and single video details via generated endpoints
 
-- Handled loading and error states gracefully for improved user experience
+- Implemented dynamic filtering to show videos matching user-selected tags
+
+- Displayed related videos automatically when viewing a single video
+
+- Connected React components to RTK Query for:
+
+  - Triggering queries and mutations
+  - Selecting video data and loading states directly from hooks
+
+- Gracefully handled loading and error states for an improved user experience
 
 ---
 
 ## **Resources**
 
 - [Redux Toolkit Documentation](https://redux-toolkit.js.org/introduction/getting-started)
-- [Redux Thunk Middleware](https://redux.js.org/usage/writing-logic-thunks)
-- [Redux Data Flow Overview](https://redux.js.org/tutorials/fundamentals/part-2-concepts-data-flow)
-- [Using createAsyncThunk](https://redux-toolkit.js.org/api/createAsyncThunk)
+- [RTK Query Overview](https://redux-toolkit.js.org/rtk-query/overview)
+- [Redux Data Flow Concepts](https://redux.js.org/tutorials/fundamentals/part-2-concepts-data-flow)
+- [Using RTK Query in React](https://redux-toolkit.js.org/rtk-query/usage/examples)
 
 ---
 
@@ -66,7 +69,7 @@ Follow these steps to run this branch in your machine:
 3. **Switch to this branch:**
 
    ```bash
-   git checkout redux_5.3
+   git checkout redux_8.1
    ```
 
 4. **Install dependencies:**

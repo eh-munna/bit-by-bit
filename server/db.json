@@ -9,10 +9,15 @@
       "duration": "30:00",
       "views": 25123,
       "link": "https://example.com/videos/js-30min",
-      "thumbnail": "https://example.com/thumbnails/js-30min.jpg",
+      "thumbnail": "https://shorturl.at/zeXiw",
       "likes": 2300,
       "unlikes": 120,
-      "tags": ["JavaScript", "Beginner", "Crash Course", "Programming"]
+      "tags": [
+        "JavaScript",
+        "Beginner",
+        "Crash Course",
+        "Programming"
+      ]
     },
     {
       "id": "0bcb298a-3d12-4b8d-9d67-1c2024010002",
@@ -23,24 +28,34 @@
       "duration": "15:45",
       "views": 18452,
       "link": "https://example.com/videos/react-hooks",
-      "thumbnail": "https://example.com/thumbnails/react-hooks.jpg",
+      "thumbnail": "https://shorturl.at/w5xrc",
       "likes": 1700,
       "unlikes": 43,
-      "tags": ["React", "Hooks", "Frontend", "Web Development"]
+      "tags": [
+        "React",
+        "Hooks",
+        "Frontend",
+        "Web Development"
+      ]
     },
     {
       "id": "0bcb298a-3d12-4b8d-9d67-1c2024010003",
       "title": "CSS Flexbox in 10 Minutes",
       "description": "Learn how to layout your website using Flexbox.",
-      "date": "May 10, 2024",
+      "date": "May 11, 2024",
       "author": "DesignGuru",
       "duration": "10:00",
       "views": 13250,
       "link": "https://example.com/videos/css-flexbox",
-      "thumbnail": "https://example.com/thumbnails/css-flexbox.jpg",
+      "thumbnail": "https://shorturl.at/zv6wS",
       "likes": 950,
       "unlikes": 12,
-      "tags": ["CSS", "Flexbox", "Layout", "Web Design"]
+      "tags": [
+        "CSS",
+        "Layout",
+        "Flexbox",
+        "Web Design"
+      ]
     },
     {
       "id": "0bcb298a-3d12-4b8d-9d67-1c2024010004",
@@ -51,10 +66,15 @@
       "duration": "8:32",
       "views": 11789,
       "link": "https://example.com/videos/vscode-extensions",
-      "thumbnail": "https://example.com/thumbnails/vscode-extensions.jpg",
+      "thumbnail": "https://shorturl.at/Kr8Xm",
       "likes": 1032,
       "unlikes": 20,
-      "tags": ["VSCode", "Productivity", "Extensions", "Tools"]
+      "tags": [
+        "VSCode",
+        "Productivity",
+        "Extensions",
+        "Tools"
+      ]
     },
     {
       "id": "0bcb298a-3d12-4b8d-9d67-1c2024010005",
@@ -65,10 +85,15 @@
       "duration": "22:15",
       "views": 22144,
       "link": "https://example.com/videos/nodejs-crash",
-      "thumbnail": "https://example.com/thumbnails/nodejs-crash.jpg",
+      "thumbnail": "https://shorturl.at/zeXiw",
       "likes": 1823,
       "unlikes": 54,
-      "tags": ["Node.js", "Backend", "JavaScript", "Programming"]
+      "tags": [
+        "Node.js",
+        "Backend",
+        "JavaScript",
+        "Programming"
+      ]
     },
     {
       "id": "0bcb298a-3d12-4b8d-9d67-1c2024010006",
@@ -79,10 +104,15 @@
       "duration": "6:48",
       "views": 8123,
       "link": "https://example.com/videos/html-semantic",
-      "thumbnail": "https://example.com/thumbnails/html-semantic.jpg",
+      "thumbnail": "https://tinyurl.com/5b6seww6",
       "likes": 670,
       "unlikes": 9,
-      "tags": ["HTML", "Accessibility", "Markup", "Web Design"]
+      "tags": [
+        "HTML",
+        "Accessibility",
+        "Markup",
+        "Web Design"
+      ]
     },
     {
       "id": "0bcb298a-3d12-4b8d-9d67-1c2024010007",
@@ -93,10 +123,15 @@
       "duration": "19:05",
       "views": 13450,
       "link": "https://example.com/videos/express-api",
-      "thumbnail": "https://example.com/thumbnails/express-api.jpg",
+      "thumbnail": "https://tinyurl.com/5b6seww6",
       "likes": 1234,
       "unlikes": 18,
-      "tags": ["Node.js", "REST API", "Backend", "JavaScript"]
+      "tags": [
+        "Node.js",
+        "REST API",
+        "Backend",
+        "JavaScript"
+      ]
     },
     {
       "id": "0bcb298a-3d12-4b8d-9d67-1c2024010008",
@@ -107,10 +142,15 @@
       "duration": "13:20",
       "views": 16821,
       "link": "https://example.com/videos/js-arrays",
-      "thumbnail": "https://example.com/thumbnails/js-arrays.jpg",
+      "thumbnail": "https://shorturl.at/zeXiw",
       "likes": 1423,
       "unlikes": 31,
-      "tags": ["JavaScript", "Arrays", "Programming", "Data Manipulation"]
+      "tags": [
+        "JavaScript",
+        "Arrays",
+        "Programming",
+        "Data Manipulation"
+      ]
     },
     {
       "id": "0bcb298a-3d12-4b8d-9d67-1c2024010009",
@@ -121,10 +161,15 @@
       "duration": "12:50",
       "views": 11002,
       "link": "https://example.com/videos/git-basics",
-      "thumbnail": "https://example.com/thumbnails/git-basics.jpg",
+      "thumbnail": "https://tinyurl.com/5b6seww6",
       "likes": 995,
       "unlikes": 14,
-      "tags": ["Git", "Version Control", "Source Control", "Tools"]
+      "tags": [
+        "Git",
+        "Version Control",
+        "Source Control",
+        "Tools"
+      ]
     },
     {
       "id": "0bcb298a-3d12-4b8d-9d67-1c2024010010",
@@ -135,10 +180,15 @@
       "duration": "14:18",
       "views": 9021,
       "link": "https://example.com/videos/tailwind-css",
-      "thumbnail": "https://example.com/thumbnails/tailwind-css.jpg",
+      "thumbnail": "https://shorturl.at/dfQd0",
       "likes": 801,
       "unlikes": 16,
-      "tags": ["Tailwind CSS", "Styling", "Web Design", "CSS"]
+      "tags": [
+        "Tailwind CSS",
+        "Styling",
+        "Web Design",
+        "CSS"
+      ]
     },
     {
       "id": "0bcb298a-3d12-4b8d-9d67-1c2024010011",
@@ -149,10 +199,15 @@
       "duration": "11:22",
       "views": 10056,
       "link": "https://example.com/videos/responsive-layouts",
-      "thumbnail": "https://example.com/thumbnails/responsive-layouts.jpg",
+      "thumbnail": "https://tinyurl.com/mwmdhbcr",
       "likes": 890,
       "unlikes": 11,
-      "tags": ["Responsive Design", "CSS Grid", "Flexbox", "Web Design"]
+      "tags": [
+        "Responsive Design",
+        "CSS Grid",
+        "Flexbox",
+        "Web Design"
+      ]
     },
     {
       "id": "0bcb298a-3d12-4b8d-9d67-1c2024010012",
@@ -163,10 +218,16 @@
       "duration": "9:34",
       "views": 15324,
       "link": "https://example.com/videos/async-await",
-      "thumbnail": "https://example.com/thumbnails/async-await.jpg",
+      "thumbnail": "https://tinyurl.com/5meurumw",
       "likes": 1365,
       "unlikes": 19,
-      "tags": ["JavaScript", "Async", "Await", "Promises", "Asynchronous"]
+      "tags": [
+        "JavaScript",
+        "Async",
+        "Await",
+        "Promises",
+        "Asynchronous"
+      ]
     },
     {
       "id": "0bcb298a-3d12-4b8d-9d67-1c2024010013",
@@ -177,10 +238,15 @@
       "duration": "7:50",
       "views": 9521,
       "link": "https://example.com/videos/react-router",
-      "thumbnail": "https://example.com/thumbnails/react-router.jpg",
+      "thumbnail": "https://shorturl.at/dfQd0",
       "likes": 845,
       "unlikes": 13,
-      "tags": ["React", "Routing", "Navigation", "Frontend"]
+      "tags": [
+        "React",
+        "Routing",
+        "Navigation",
+        "Frontend"
+      ]
     },
     {
       "id": "0bcb298a-3d12-4b8d-9d67-1c2024010014",
@@ -191,10 +257,15 @@
       "duration": "17:05",
       "views": 7321,
       "link": "https://example.com/videos/webpack-crash",
-      "thumbnail": "https://example.com/thumbnails/webpack-crash.jpg",
+      "thumbnail": "https://tinyurl.com/5meurumw",
       "likes": 712,
       "unlikes": 9,
-      "tags": ["Webpack", "Bundling", "JavaScript", "Build Tools"]
+      "tags": [
+        "Webpack",
+        "Bundling",
+        "JavaScript",
+        "Build Tools"
+      ]
     },
     {
       "id": "0bcb298a-3d12-4b8d-9d67-1c2024010015",
@@ -205,10 +276,15 @@
       "duration": "18:40",
       "views": 12034,
       "link": "https://example.com/videos/typescript-intro",
-      "thumbnail": "https://example.com/thumbnails/typescript-intro.jpg",
+      "thumbnail": "https://tinyurl.com/5meurumw",
       "likes": 1023,
       "unlikes": 22,
-      "tags": ["TypeScript", "JavaScript", "Static Typing", "Programming"]
+      "tags": [
+        "TypeScript",
+        "JavaScript",
+        "Static Typing",
+        "Programming"
+      ]
     },
     {
       "id": "0bcb298a-3d12-4b8d-9d67-1c2024010016",
@@ -219,10 +295,15 @@
       "duration": "10:14",
       "views": 8122,
       "link": "https://example.com/videos/sass-basics",
-      "thumbnail": "https://example.com/thumbnails/sass-basics.jpg",
+      "thumbnail": "https://shorturl.at/Kr8Xm",
       "likes": 702,
       "unlikes": 8,
-      "tags": ["SASS", "CSS", "Preprocessor", "Styling"]
+      "tags": [
+        "SASS",
+        "CSS",
+        "Preprocessor",
+        "Styling"
+      ]
     },
     {
       "id": "0bcb298a-3d12-4b8d-9d67-1c2024010017",
@@ -233,10 +314,15 @@
       "duration": "8:59",
       "views": 11055,
       "link": "https://example.com/videos/fetch-vs-axios",
-      "thumbnail": "https://example.com/thumbnails/fetch-vs-axios.jpg",
+      "thumbnail": "https://shorturl.at/dfQd0",
       "likes": 943,
       "unlikes": 15,
-      "tags": ["Fetch API", "Axios", "HTTP Requests", "JavaScript"]
+      "tags": [
+        "Fetch API",
+        "Axios",
+        "HTTP Requests",
+        "JavaScript"
+      ]
     },
     {
       "id": "0bcb298a-3d12-4b8d-9d67-1c2024010018",
@@ -247,10 +333,15 @@
       "duration": "7:22",
       "views": 14122,
       "link": "https://example.com/videos/js-closures",
-      "thumbnail": "https://example.com/thumbnails/js-closures.jpg",
+      "thumbnail": "https://shorturl.at/Kr8Xm",
       "likes": 1202,
       "unlikes": 24,
-      "tags": ["JavaScript", "Closures", "Scope", "Advanced Topics"]
+      "tags": [
+        "JavaScript",
+        "Closures",
+        "Scope",
+        "Advanced Topics"
+      ]
     },
     {
       "id": "0bcb298a-3d12-4b8d-9d67-1c2024010019",
@@ -261,10 +352,15 @@
       "duration": "9:12",
       "views": 9422,
       "link": "https://example.com/videos/js-debugging",
-      "thumbnail": "https://example.com/thumbnails/js-debugging.jpg",
+      "thumbnail": "https://tinyurl.com/5b6seww6",
       "likes": 832,
       "unlikes": 18,
-      "tags": ["JavaScript", "Debugging", "DevTools", "Troubleshooting"]
+      "tags": [
+        "JavaScript",
+        "Debugging",
+        "DevTools",
+        "Troubleshooting"
+      ]
     },
     {
       "id": "0bcb298a-3d12-4b8d-9d67-1c2024010020",
@@ -275,32 +371,93 @@
       "duration": "11:37",
       "views": 11334,
       "link": "https://example.com/videos/api-auth",
-      "thumbnail": "https://example.com/thumbnails/api-auth.jpg",
+      "thumbnail": "https://shorturl.at/Kr8Xm",
       "likes": 978,
       "unlikes": 20,
-      "tags": ["API", "Authentication", "Security", "Backend"]
+      "tags": [
+        "API",
+        "Authentication",
+        "Security",
+        "Backend"
+      ]
     }
   ],
-
   "tags": [
-    { "id": "tag1", "name": "JavaScript" },
-    { "id": "tag2", "name": "React" },
-    { "id": "tag3", "name": "CSS" },
-    { "id": "tag4", "name": "VS Code" },
-    { "id": "tag5", "name": "Node.js" },
-    { "id": "tag6", "name": "HTML" },
-    { "id": "tag7", "name": "REST API" },
-    { "id": "tag8", "name": "Arrays" },
-    { "id": "tag9", "name": "Git" },
-    { "id": "tag10", "name": "Responsive Design" },
-    { "id": "tag11", "name": "Asynchronous" },
-    { "id": "tag12", "name": "React Router" },
-    { "id": "tag13", "name": "Webpack" },
-    { "id": "tag14", "name": "TypeScript" },
-    { "id": "tag15", "name": "SASS" },
-    { "id": "tag16", "name": "Fetch API" },
-    { "id": "tag17", "name": "Closures" },
-    { "id": "tag18", "name": "DevTools" },
-    { "id": "tag19", "name": "API" }
+    {
+      "id": "tag1",
+      "name": "JavaScript"
+    },
+    {
+      "id": "tag2",
+      "name": "React"
+    },
+    {
+      "id": "tag3",
+      "name": "CSS"
+    },
+    {
+      "id": "tag4",
+      "name": "VS Code"
+    },
+    {
+      "id": "tag5",
+      "name": "Node.js"
+    },
+    {
+      "id": "tag6",
+      "name": "HTML"
+    },
+    {
+      "id": "tag7",
+      "name": "REST API"
+    },
+    {
+      "id": "tag8",
+      "name": "Arrays"
+    },
+    {
+      "id": "tag9",
+      "name": "Git"
+    },
+    {
+      "id": "tag10",
+      "name": "Responsive Design"
+    },
+    {
+      "id": "tag11",
+      "name": "Asynchronous"
+    },
+    {
+      "id": "tag12",
+      "name": "React Router"
+    },
+    {
+      "id": "tag13",
+      "name": "Webpack"
+    },
+    {
+      "id": "tag14",
+      "name": "TypeScript"
+    },
+    {
+      "id": "tag15",
+      "name": "SASS"
+    },
+    {
+      "id": "tag16",
+      "name": "Fetch API"
+    },
+    {
+      "id": "tag17",
+      "name": "Closures"
+    },
+    {
+      "id": "tag18",
+      "name": "DevTools"
+    },
+    {
+      "id": "tag19",
+      "name": "API"
+    }
   ]
 }
