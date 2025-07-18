@@ -1,132 +1,53 @@
 {
-  // string
-  const strValue: string = 'hello world';
-  console.log(strValue);
-
-  // number
-  const numValue: number = 10;
-  console.log(numValue);
-
-  // boolean
-  const booleanValue: boolean = true;
-  console.log(booleanValue);
-
-  // array
-  const strArr: string[] = ['hello', 'world'];
-  console.log(strArr);
-
-  // tuple
-  const tupleArr: [string, number] = ['hello', 10];
-  console.log(tupleArr);
-
   // ********************************************* //
+  // Function in typescript
 
-  // Object , Optional and Literal Types
+  const expenseTracker = (value: number, type: string): number => {
+    let balance = 1000;
 
-  // Object
+    if (value < 1) {
+      return balance;
+    }
 
-  const user: {
-    company: string;
-    location: string;
-  } = {
-    company: 'Google',
-    location: 'Seoul',
+    if (type === 'add') {
+      balance = balance + value;
+    } else if (type === 'subtract') {
+      if (value > balance) {
+        return balance;
+      }
+      balance = balance - value;
+    }
+
+    return balance;
   };
 
-  console.log(user);
+  console.log(expenseTracker(1200, 'add'));
 
-  // Optional
+  // Function Default Parameter
 
-  const userOptional: {
-    address?: string;
-    email: string;
-  } = {
-    email: 'example@mail.com',
-  };
+  function greet(
+    name: string,
+    age?: number,
+    salutation: string = 'Hello'
+  ): string {
+    if (age) {
+      return `${salutation}, ${name}. You are ${age} years old.`;
+    }
+    return `${salutation}, ${name}`;
+  }
 
-  console.log(userOptional);
+  console.log(greet('Alice'));
+  console.log(greet('Bob', 30));
 
-  // Literal Types
-  const userLiteral: {
-    companyName: 'Google';
-    location: string;
-  } = {
-    companyName: 'Google',
-    location: 'Seoul',
-  };
+  // Void & Never Return Types
 
-  console.log(userLiteral);
+  function logMessage(message: string): void {
+    console.log(message);
+  }
+  logMessage('Hello, world!');
 
-  // ********************************************* //
-
-  // Type alias in typescript
-
-  type Student = {
-    name: string;
-    age: number;
-    email: string;
-    contact?: string;
-  };
-
-  const student: Student = {
-    name: 'Robert',
-    age: 25,
-    email: 'example@mail.com',
-    contact: '010-1234-5678',
-  };
-
-  const student2: Student = {
-    name: 'John',
-    age: 30,
-    email: 'example@mail.com',
-  };
-
-  // ********************************************* //
-
-  // Union and Intersection types
-
-  // Union
-
-  type BloodGroup = 'A' | 'B' | 'O' | 'AB';
-
-  type Patient = {
-    name: string;
-    contactNo: string;
-    gender: 'male' | 'female';
-    bloodGroup: BloodGroup;
-  };
-
-  const patient: Patient = {
-    name: 'John',
-    contactNo: '010-1234-5678',
-    gender: 'male',
-    bloodGroup: 'A',
-  };
-
-  console.log(patient);
-
-  // Intersection types
-
-  type Mobile = {
-    features: string[];
-    name: string;
-  };
-  type Laptop = {
-    features: string[];
-    name: string;
-  };
-
-  type Device = Mobile & Laptop;
-
-  const device1: Device = {
-    features: ['camera', 'speaker'],
-    name: 'iPhone',
-  };
-
-  const device2: Device = {
-    features: ['camera', 'speaker'],
-    name: 'Laptop',
-  };
-
-  console.log({ device1, device2 });
+  // function throwError(message: string): never {
+  //   throw new Error(message);
+  // }
+  // throwError('An error occurred');
 }

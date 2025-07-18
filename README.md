@@ -2,79 +2,111 @@
 
 ---
 
-## **TypeScript 1.1 – Branch Overview**
+## **TypeScript 1.2 – Branch Overview**
 
-Welcome to the **`typeScript_1.1`** branch of **Bit By Bit!**
+Welcome to the **`typeScript_1.2`** branch of **Bit By Bit!**
 
-This branch focuses on the foundational and advanced type features of TypeScript, helping build robust, scalable, and well-typed applications.
+This branch explores how to define and work with **functions in TypeScript**, ensuring type-safe, predictable, and maintainable logic across applications.
 
 ---
 
 ### ✅ **What I've Learned**
 
-#### 🟦 **Primitive Data Types**
+#### 🔹 **Function Basics**
 
-Covered the basic building blocks of TypeScript:
-
-- `number`
-- `string`
-- `boolean`
-- `null`
-- `undefined`
-- `symbol`
-
-These types help enforce data correctness at the most granular level.
-
-#### 🟪 **Non-Primitive Data Types**
-
-Explored more complex structures including:
-
-- `object`
-- `array`
-- `function`
-- `class`
-
-These allow for modeling real-world entities and program logic in a structured way.
-
-#### 🟨 **Object, Optional, and Literal Types**
-
-- Defined structured `object` shapes with specific properties.
-- Used **optional properties** (`prop?: type`) to increase flexibility.
-- Applied **literal types** to restrict values to a specific set of strings or numbers for more precise typing.
-
-#### 🟫 **Type Aliases**
-
-Used `type` to create custom type definitions that simplify and reuse complex type structures across the app.
+Learned how to define functions with typed parameters and return types:
 
 ```ts
-type User = {
-  id: number;
-  name: string;
-  isActive?: boolean;
-};
+function add(a: number, b: number): number {
+  return a + b;
+}
 ```
 
-#### 🟧 **Union & Intersection Types**
+- Parameters and return values are explicitly typed.
+- TypeScript infers return types when not provided (but explicit typing is preferred for clarity).
 
-- **Union Types** (`|`): Allow variables to hold values of multiple defined types.
-- **Intersection Types** (`&`): Combine multiple types into one, enforcing all properties.
+#### 🔸 **Optional & Default Parameters**
+
+- Used `?` to define optional parameters.
+- Applied default values to parameters for flexibility.
 
 ```ts
-type Admin = { role: 'admin'; accessLevel: number };
-type User = { name: string };
-type AdminUser = Admin & User;
+function greet(
+  name: string,
+  age?: number,
+  salutation: string = 'Hello'
+): string {
+  if (age) {
+    return `${salutation}, ${name}. You are ${age} years old.`;
+  }
+  return `${salutation}, ${name}`;
+}
 ```
+
+#### 🔷 **Function Expressions & Arrow Functions**
+
+- Explored function expressions and concise arrow functions:
+
+```ts
+const multiply = (x: number, y: number): number => x * y;
+```
+
+- Arrow functions are especially useful in callbacks and concise logic.
+
+#### 🟢 **Void & Never Return Types**
+
+- `void`: Used for functions that don’t return a value (e.g., logging).
+- `never`: Used for functions that never complete (e.g., throwing an error or infinite loops).
+
+```ts
+function logMessage(message: string): void {
+  console.log(message);
+}
+
+function throwError(msg: string): never {
+  throw new Error(msg);
+}
+```
+
+#### 🟠 **Function Overloads**
+
+Defined multiple function signatures to support different types or argument structures:
+
+```ts
+function display(value: string): void;
+function display(value: number): void;
+function display(value: string | number): void {
+  console.log(value);
+}
+```
+
+- Overloads help maintain strict typing while offering flexibility.
+
+#### 🟣 **Callback & Higher-Order Functions**
+
+- Passed functions as arguments and returned them as values:
+
+```ts
+function operate(
+  a: number,
+  b: number,
+  fn: (x: number, y: number) => number
+): number {
+  return fn(a, b);
+}
+```
+
+- Enabled functional programming patterns with type safety.
 
 ---
 
 ### 📚 **Resources**
 
-- [Primitive Types](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#the-primitives-string-number-and-boolean)
-- [Object Types](https://www.typescriptlang.org/docs/handbook/2/objects.html)
-- [Optional Properties](https://www.typescriptlang.org/docs/handbook/2/objects.html#optional-properties)
-- [Literal Types](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#literal-types)
-- [Type Aliases](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#type-aliases)
-- [Union and Intersection Types](https://www.typescriptlang.org/docs/handbook/2/objects.html#union-and-intersection-types)
+- [Functions](https://www.typescriptlang.org/docs/handbook/2/functions.html)
+- [Optional and Default Parameters](https://www.typescriptlang.org/docs/handbook/2/functions.html#optional-and-default-parameters)
+- [Function Overloads](https://www.typescriptlang.org/docs/handbook/2/functions.html#function-overloads)
+- [Void and Never](https://www.typescriptlang.org/docs/handbook/2/functions.html#void)
+- [Arrow Functions](https://www.typescriptlang.org/docs/handbook/2/functions.html#writing-functions)
 
 ---
 
@@ -97,7 +129,7 @@ Follow these steps to run this branch in your machine:
 3. **Switch to this branch:**
 
    ```bash
-   git checkout typeScript_1.1
+   git checkout typeScript_1.2
    ```
 
 4. **Install dependencies:**
