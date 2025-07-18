@@ -1,4 +1,5 @@
-export { default as AddVideoForm } from './AddVideoForm';
-export { default as EditVideoForm } from './EditVideoForm';
 export { default as Home } from './Home';
-export { default as Video } from './Video';
+export { default as Inbox } from './Inbox';
+export { default as Login } from './Login';
+export { default as Register } from './Register';
+export { default as Conversation } from './Conversation';

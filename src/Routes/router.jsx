@@ -1,8 +1,7 @@
 import { createBrowserRouter } from 'react-router';
-import Layout from '../components/layout/Layout';
-import { AddVideoForm, EditVideoForm } from '../pages';
-import Home from '../pages/Home';
-import Video from '../pages/Video';
+
+import { Layout } from '../components';
+import { Conversation, Home, Inbox, Register } from '../pages';
 
 export const router = createBrowserRouter([
   {
@@ -10,9 +9,9 @@ export const router = createBrowserRouter([
     element: <Layout />,
     children: [
       { index: true, element: <Home /> },
-      { path: '/videos/:videoId', element: <Video /> },
-      { path: '/videos/add-video', element: <AddVideoForm /> },
-      { path: '/videos/edit-video/:videoId', element: <EditVideoForm /> },
+      { path: '/register', element: <Register /> },
+      { path: '/inbox', element: <Conversation /> },
+      { path: '/inbox/messages/:id', element: <Inbox /> },
     ],
   },
 ]);

@@ -11,7 +11,8 @@ export default function Navbar() {
       className="
         w-full flex items-center justify-between
         px-8 py-4
-        bg-white dark:bg-gray-900
+        bg-gray-50 dark:bg-slate-900
+        border-b border-gray-200 dark:border-gray-700
         text-gray-900 dark:text-slate-200
         shadow-lg
         transition-colors duration-300
@@ -28,6 +29,22 @@ export default function Navbar() {
             className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
           >
             Home
+          </Link>
+        </li>
+        <li>
+          <Link
+            to="/register"
+            className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+          >
+            Register
+          </Link>
+        </li>
+        <li>
+          <Link
+            to="/inbox"
+            className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+          >
+            Inbox
           </Link>
         </li>
         <li>

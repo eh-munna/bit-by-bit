@@ -6,9 +6,9 @@ Build a dynamic video hosting platform where users can explore videos filtered b
 
 ---
 
-## **redux_8.1** Branch Overview
+## **redux_9.1** Branch Overview
 
-Welcome to the **redux_8.1** branch of **Bit By Bit!**
+Welcome to the **redux_9.1** branch of **Bit By Bit!**
 
 In this branch, I’ve built a complete video hosting application that retrieves and displays videos from an API. Users can:
 
@@ -69,7 +69,7 @@ Follow these steps to run this branch in your machine:
 3. **Switch to this branch:**
 
    ```bash
-   git checkout redux_8.1
+   git checkout redux_9.1
    ```
 
 4. **Install dependencies:**

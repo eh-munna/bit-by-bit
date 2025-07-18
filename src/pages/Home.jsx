@@ -1,12 +1,11 @@
-import { Hero, Tags, Videos } from '../components/Home';
-import Feature from '../components/ui/Feature';
+import { Feature } from '../components';
+import { Login } from '../pages';
+
 export default function Home() {
   return (
     <>
       <Feature>
-        <Hero />
-        <Tags />
-        <Videos />
+        <Login />
       </Feature>
     </>
   );

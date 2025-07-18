@@ -1,4 +1,5 @@
-import Navbar from '@/components/ui/Navbar';
+import { Navbar } from '../../components';
+
 export default function Header() {
   return (
     <header className="w-full">
