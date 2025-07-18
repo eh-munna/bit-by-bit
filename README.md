@@ -1,52 +1,80 @@
 # **Bit By Bit** - Fullstack Learning Journey
 
-## **Video Hosting with Tag-Based Filtering and Related Content**
+---
 
-Build a dynamic video hosting platform where users can explore videos filtered by tags and discover related content seamlessly, powered by modern Redux Toolkit architecture and efficient data fetching through RTK Query.
+## **TypeScript 1.1 – Branch Overview**
+
+Welcome to the **`typeScript_1.1`** branch of **Bit By Bit!**
+
+This branch focuses on the foundational and advanced type features of TypeScript, helping build robust, scalable, and well-typed applications.
 
 ---
 
-## **redux_9.1** Branch Overview
+### ✅ **What I've Learned**
 
-Welcome to the **redux_9.1** branch of **Bit By Bit!**
+#### 🟦 **Primitive Data Types**
 
-In this branch, I’ve built a complete video hosting application that retrieves and displays videos from an API. Users can:
+Covered the basic building blocks of TypeScript:
 
-- Filter videos dynamically by selecting tags
-- Open a video to view detailed information
-- Automatically load and display related videos based on tags or context
+- `number`
+- `string`
+- `boolean`
+- `null`
+- `undefined`
+- `symbol`
 
-All state management and data fetching are now handled by **RTK Query**, simplifying API calls and caching for a more efficient and scalable app.
+These types help enforce data correctness at the most granular level.
+
+#### 🟪 **Non-Primitive Data Types**
+
+Explored more complex structures including:
+
+- `object`
+- `array`
+- `function`
+- `class`
+
+These allow for modeling real-world entities and program logic in a structured way.
+
+#### 🟨 **Object, Optional, and Literal Types**
+
+- Defined structured `object` shapes with specific properties.
+- Used **optional properties** (`prop?: type`) to increase flexibility.
+- Applied **literal types** to restrict values to a specific set of strings or numbers for more precise typing.
+
+#### 🟫 **Type Aliases**
+
+Used `type` to create custom type definitions that simplify and reuse complex type structures across the app.
+
+```ts
+type User = {
+  id: number;
+  name: string;
+  isActive?: boolean;
+};
+```
+
+#### 🟧 **Union & Intersection Types**
+
+- **Union Types** (`|`): Allow variables to hold values of multiple defined types.
+- **Intersection Types** (`&`): Combine multiple types into one, enforcing all properties.
+
+```ts
+type Admin = { role: 'admin'; accessLevel: number };
+type User = { name: string };
+type AdminUser = Admin & User;
+```
 
 ---
 
-## **Branch Highlights**
+### 📚 **Resources**
 
-### **Key Features Implemented**
-
-- Fetched video data seamlessly from an API using **RTK Query services**
-
-- Managed video collections and single video details via generated endpoints
-
-- Implemented dynamic filtering to show videos matching user-selected tags
-
-- Displayed related videos automatically when viewing a single video
-
-- Connected React components to RTK Query for:
-
-  - Triggering queries and mutations
-  - Selecting video data and loading states directly from hooks
-
-- Gracefully handled loading and error states for an improved user experience
-
----
-
-## **Resources**
-
-- [Redux Toolkit Documentation](https://redux-toolkit.js.org/introduction/getting-started)
-- [RTK Query Overview](https://redux-toolkit.js.org/rtk-query/overview)
-- [Redux Data Flow Concepts](https://redux.js.org/tutorials/fundamentals/part-2-concepts-data-flow)
-- [Using RTK Query in React](https://redux-toolkit.js.org/rtk-query/usage/examples)
+- [Primitive Types](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#the-primitives-string-number-and-boolean)
+- [Object Types](https://www.typescriptlang.org/docs/handbook/2/objects.html)
+- [Optional Properties](https://www.typescriptlang.org/docs/handbook/2/objects.html#optional-properties)
+- [Literal Types](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#literal-types)
+- [Type Aliases](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#type-aliases)
+- [Union and Intersection Types](https://www.typescriptlang.org/docs/handbook/2/objects.html#union-and-intersection-types)
 
 ---
 
@@ -69,7 +97,7 @@ Follow these steps to run this branch in your machine:
 3. **Switch to this branch:**
 
    ```bash
-   git checkout redux_9.1
+   git checkout typeScript_1.1
    ```
 
 4. **Install dependencies:**
@@ -78,10 +106,16 @@ Follow these steps to run this branch in your machine:
    npm install
    ```
 
-5. **Run the app:**
+5. **Convert to JavaScript:**
 
    ```bash
-   npm run dev
+   npm run build
+   ```
+
+6. **Run the app:**
+
+   ```bash
+   npm run start
    ```
 
 ---
