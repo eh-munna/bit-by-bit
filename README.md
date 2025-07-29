@@ -2,111 +2,140 @@
 
 ---
 
-## **TypeScript 1.2 – Branch Overview**
+## **TypeScript 2.1 – Branch Overview**
 
-Welcome to the **`typeScript_1.2`** branch of **Bit By Bit!**
+Welcome to the **`typeScript_2.1`** branch of **Bit By Bit!**
 
-This branch explores how to define and work with **functions in TypeScript**, ensuring type-safe, predictable, and maintainable logic across applications.
+This branch explores key features for creating **robust and expressive type systems** in TypeScript, focusing on **type assertion, narrowing, interfaces, type declarations**, and **aliasing**.
 
 ---
 
 ### ✅ **What I've Learned**
 
-#### 🔹 **Function Basics**
+#### 🔹 **Type Assertion**
 
-Learned how to define functions with typed parameters and return types:
+- Used to **tell the compiler** the exact type of a variable when you're sure, even if TypeScript can't infer it.
 
 ```ts
-function add(a: number, b: number): number {
-  return a + b;
-}
+let someValue: unknown = 'I’m a string';
+let strLength: number = (someValue as string).length;
 ```
 
-- Parameters and return values are explicitly typed.
-- TypeScript infers return types when not provided (but explicit typing is preferred for clarity).
+- Helps when working with third-party APIs or DOM elements.
 
-#### 🔸 **Optional & Default Parameters**
+---
 
-- Used `?` to define optional parameters.
-- Applied default values to parameters for flexibility.
+#### 🔸 **Type Narrowing**
+
+- Enables TypeScript to **refine** types based on control flow.
 
 ```ts
-function greet(
-  name: string,
-  age?: number,
-  salutation: string = 'Hello'
-): string {
-  if (age) {
-    return `${salutation}, ${name}. You are ${age} years old.`;
+function printId(id: string | number) {
+  if (typeof id === 'string') {
+    console.log(id.toUpperCase());
+  } else {
+    console.log(id.toFixed(2));
   }
-  return `${salutation}, ${name}`;
 }
 ```
 
-#### 🔷 **Function Expressions & Arrow Functions**
+- Common narrowing techniques:
 
-- Explored function expressions and concise arrow functions:
+  - `typeof`
+
+---
+
+#### 🔷 **Interface vs Type Alias**
+
+- Both are used to **define custom types**.
+- **Interfaces** are extendable and often preferred for object shapes.
+- **Type aliases** are more flexible — can represent unions, primitives, tuples, etc.
 
 ```ts
-const multiply = (x: number, y: number): number => x * y;
+interface User {
+  name: string;
+  age: number;
+}
+
+type Admin = {
+  name: string;
+  accessLevel: number;
+};
 ```
 
-- Arrow functions are especially useful in callbacks and concise logic.
-
-#### 🟢 **Void & Never Return Types**
-
-- `void`: Used for functions that don’t return a value (e.g., logging).
-- `never`: Used for functions that never complete (e.g., throwing an error or infinite loops).
+- Both can be extended:
 
 ```ts
-function logMessage(message: string): void {
-  console.log(message);
+interface Person {
+  name: string;
 }
 
-function throwError(msg: string): never {
-  throw new Error(msg);
+interface Employee extends Person {
+  id: number;
 }
+
+type Developer = Person & { language: string };
 ```
 
-#### 🟠 **Function Overloads**
+---
 
-Defined multiple function signatures to support different types or argument structures:
+#### 🟢 **Type Declarations**
+
+##### ➤ With `type`:
 
 ```ts
-function display(value: string): void;
-function display(value: number): void;
-function display(value: string | number): void {
-  console.log(value);
-}
+type Point = {
+  x: number;
+  y: number;
+};
 ```
 
-- Overloads help maintain strict typing while offering flexibility.
-
-#### 🟣 **Callback & Higher-Order Functions**
-
-- Passed functions as arguments and returned them as values:
+##### ➤ With `interface`:
 
 ```ts
-function operate(
-  a: number,
-  b: number,
-  fn: (x: number, y: number) => number
-): number {
-  return fn(a, b);
+interface Point {
+  x: number;
+  y: number;
 }
 ```
 
-- Enabled functional programming patterns with type safety.
+- Both define object structures — choice depends on context and use case.
+
+---
+
+#### 🟠 **Aliasing Types for Different Data Structures**
+
+##### ➤ Using `type` for array of strings or numbers:
+
+```ts
+type StringArray = string[];
+type NumberArray = Array<number>;
+```
+
+##### ➤ Using `interface` for array structure:
+
+```ts
+interface StringArray {
+  [index: number]: string;
+}
+
+interface NumberArray {
+  [index: number]: number;
+}
+```
+
+- Best used for enforcing **consistent types in arrays**.
+- `type` is generally simpler for primitives, `interface` adds clarity for object/array structure.
 
 ---
 
 ### 📚 **Resources**
 
-- [Functions](https://www.typescriptlang.org/docs/handbook/2/functions.html)
-- [Optional and Default Parameters](https://www.typescriptlang.org/docs/handbook/2/functions.html#optional-and-default-parameters)
-- [Function Overloads](https://www.typescriptlang.org/docs/handbook/2/functions.html#function-overloads)
-- [Void and Never](https://www.typescriptlang.org/docs/handbook/2/functions.html#void)
-- [Arrow Functions](https://www.typescriptlang.org/docs/handbook/2/functions.html#writing-functions)
+- [Type Assertion](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#type-assertions)
+- [Type Narrowing](https://www.typescriptlang.org/docs/handbook/2/narrowing.html)
+- [Interfaces vs Types](https://www.typescriptlang.org/docs/handbook/2/objects.html)
+- [Type Declarations](https://www.typescriptlang.org/docs/handbook/2/objects.html#defining-types)
+- [Index Signatures](https://www.typescriptlang.org/docs/handbook/2/objects.html#index-signatures)
 
 ---
 
@@ -129,7 +158,7 @@ Follow these steps to run this branch in your machine:
 3. **Switch to this branch:**
 
    ```bash
-   git checkout typeScript_1.2
+   git checkout typeScript_2.1
    ```
 
 4. **Install dependencies:**

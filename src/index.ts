@@ -1,53 +1,101 @@
 {
   // ********************************************* //
-  // Function in typescript
+  // ? Type Assertion
+  let input: any;
+  input = 'Hello, TypeScript!';
+  input as string;
 
-  const expenseTracker = (value: number, type: string): number => {
-    let balance = 1000;
+  //! This will not cause an error, because `input` is converted to the type `string`
+  // input = 42;
+  console.log(`Input as string: ${(input as string).toUpperCase()}`);
 
-    if (value < 1) {
-      return balance;
+  // ? Type Narrowing
+
+  function processResult(value: string | number): string | number {
+    if (typeof value === 'string') {
+      return `String value: ${value.toUpperCase()}`;
     }
 
-    if (type === 'add') {
-      balance = balance + value;
-    } else if (type === 'subtract') {
-      if (value > balance) {
-        return balance;
-      }
-      balance = balance - value;
-    }
+    return value * 2;
+  }
 
-    return balance;
+  const result1 = processResult('hello') as string;
+  const result2 = processResult(42) as number;
+
+  console.log(`Result 1: ${result1}`);
+  console.log(`Result 2:`, result2);
+
+  // ? Interface, type vs interface
+
+  // Type declaration
+
+  // with type
+  type User = {
+    name: string;
+    age: number;
   };
 
-  console.log(expenseTracker(1200, 'add'));
+  const user: User = {
+    name: 'Alice',
+    age: 30,
+  };
 
-  // Function Default Parameter
+  // with interface
 
-  function greet(
-    name: string,
-    age?: number,
-    salutation: string = 'Hello'
-  ): string {
-    if (age) {
-      return `${salutation}, ${name}. You are ${age} years old.`;
-    }
-    return `${salutation}, ${name}`;
+  interface UserInterface {
+    name: string;
+    age: number;
   }
 
-  console.log(greet('Alice'));
-  console.log(greet('Bob', 30));
+  const userInt: UserInterface = {
+    name: 'Bob',
+    age: 25,
+  };
 
-  // Void & Never Return Types
+  //  extending type and interface
 
-  function logMessage(message: string): void {
-    console.log(message);
+  // with type
+  type Admin = User & {
+    role: string;
+  };
+
+  const adminUser: Admin = {
+    name: 'Charlie',
+    age: 35,
+    role: 'Administrator',
+  };
+
+  //  with interface
+
+  interface AdminInterface extends UserInterface {
+    role: string;
   }
-  logMessage('Hello, world!');
 
-  // function throwError(message: string): never {
-  //   throw new Error(message);
-  // }
-  // throwError('An error occurred');
+  const adminUserInt: AdminInterface = {
+    name: 'Dave',
+    age: 40,
+    role: 'Moderator',
+  };
+
+  console.log({ user, userInt, adminUser, adminUserInt });
+
+  // ? Aliasing types for different data types
+  //  with type to an array of strings and numbers
+
+  type StringArray = string[];
+  type NumberArray = number[];
+  const typeStringArray: StringArray = ['apple', 'banana', 'cherry'];
+  const typeNumberArray: NumberArray = [1, 2, 3, 4, 5];
+
+  // with interface to an array of strings and numbers
+  interface StringIntArray {
+    [index: number]: string;
+  }
+
+  interface NumberIntArray {
+    [index: number]: number;
+  }
+
+  const interfaceStringArray: StringIntArray = ['apple', 'banana', 'cherry'];
+  const interfaceNumberArray: NumberArray = [1, 2, 3, 4, 5];
 }
