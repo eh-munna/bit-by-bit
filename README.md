@@ -56,13 +56,69 @@ type User = {
 
 #### 🟧 **Union & Intersection Types**
 
-- **Union Types** (`|`): Allow variables to hold values of multiple defined types.
-- **Intersection Types** (`&`): Combine multiple types into one, enforcing all properties.
+---
+
+### 🔹 **Union Types (`|`)**
+
+**Union types** let a variable be **one of several types**.
+It means: "this **or** that".
+
+**Syntax:**
+
+```ts
+let value: string | number;
+```
+
+**Example:**
+
+```ts
+function printId(id: number | string) {
+  console.log("ID:", id);
+}
+
+printId(101);         // ✅ OK
+printId("abc-123");   // ✅ OK
+```
+
+👉 With union types, you can **only use methods** that are **common to all types** in the union, unless you **narrow** the type using type guards.
+
+---
+
+### 🔹 **Intersection Types (`&`)**
+
+**Intersection types** combine **multiple types into one**, requiring the variable to satisfy **all** of them.
+It means: "this **and** that".
+
+**Syntax:**
+
+```ts
+type Person = { name: string };
+type Employee = { employeeId: number };
+type Staff = Person & Employee;
+```
+
+**Example:**
+
+```ts
+const staffMember: Staff = {
+  name: "Alice",
+  employeeId: 1001
+}; // ✅ Must include both name and employeeId
+```
+---
+
+### 🧩 Additional Example
 
 ```ts
 type Admin = { role: 'admin'; accessLevel: number };
 type User = { name: string };
 type AdminUser = Admin & User;
+
+const adminUser: AdminUser = {
+  role: 'admin',
+  accessLevel: 5,
+  name: 'Emran'
+}; // ✅ Must satisfy both Admin and User
 ```
 
 ---
