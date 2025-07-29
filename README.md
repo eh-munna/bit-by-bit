@@ -2,140 +2,129 @@
 
 ---
 
-## **TypeScript 2.1 – Branch Overview**
+## **TypeScript 2.2 – Branch Overview**
 
-Welcome to the **`typeScript_2.1`** branch of **Bit By Bit!**
+Welcome to the **`typeScript_2.2`** branch of **Bit By Bit!**
 
-This branch explores key features for creating **robust and expressive type systems** in TypeScript, focusing on **type assertion, narrowing, interfaces, type declarations**, and **aliasing**.
+This branch dives into **generics in TypeScript**, showcasing how to write flexible, reusable, and type-safe components for arrays, functions, interfaces, and configurations.
 
 ---
 
 ### ✅ **What I've Learned**
 
-#### 🔹 **Type Assertion**
+#### 🔹 **Generics in TypeScript**
 
-- Used to **tell the compiler** the exact type of a variable when you're sure, even if TypeScript can't infer it.
+- Generics let you write code that works with **any type**, but still maintains **type safety**.
 
 ```ts
-let someValue: unknown = 'I’m a string';
-let strLength: number = (someValue as string).length;
+type ArrGeneric<T> = Array<T>;
+type ArrGenericDifferent<T> = T[];
+
+const genStrArr: ArrGeneric<string> = ['apple', 'banana'];
+const genNumArr: ArrGenericDifferent<number> = [1, 2, 3];
 ```
 
-- Helps when working with third-party APIs or DOM elements.
-
----
-
-#### 🔸 **Type Narrowing**
-
-- Enables TypeScript to **refine** types based on control flow.
+- You can define **custom object types** with generics:
 
 ```ts
-function printId(id: string | number) {
-  if (typeof id === 'string') {
-    console.log(id.toUpperCase());
-  } else {
-    console.log(id.toFixed(2));
-  }
-}
-```
-
-- Common narrowing techniques:
-
-  - `typeof`
-
----
-
-#### 🔷 **Interface vs Type Alias**
-
-- Both are used to **define custom types**.
-- **Interfaces** are extendable and often preferred for object shapes.
-- **Type aliases** are more flexible — can represent unions, primitives, tuples, etc.
-
-```ts
-interface User {
+type User = {
   name: string;
   age: number;
-}
-
-type Admin = {
-  name: string;
-  accessLevel: number;
+  isActive: boolean;
 };
+
+const users: ArrGeneric<User> = [
+  { name: 'John', age: 30, isActive: true },
+  { name: 'Jane', age: 25, isActive: false },
+];
 ```
 
-- Both can be extended:
+- Tuples with generics:
 
 ```ts
-interface Person {
-  name: string;
-}
-
-interface Employee extends Person {
-  id: number;
-}
-
-type Developer = Person & { language: string };
+type GenericTuple<T, K> = [T, K];
+const pair: GenericTuple<string, number> = ['apple', 1];
 ```
 
 ---
 
-#### 🟢 **Type Declarations**
+#### 🔸 **Using Generics with Interfaces**
 
-##### ➤ With `type`:
+- Interfaces can be generic, making them more **adaptable to various data types**.
 
 ```ts
-type Point = {
-  x: number;
-  y: number;
+interface Developer<T> {
+  name: string;
+  age: number;
+  skills: T[];
+}
+
+const mobileDeveloper: Developer<string> = {
+  name: 'Alice',
+  age: 28,
+  skills: ['React Native', 'Flutter'],
 };
 ```
 
-##### ➤ With `interface`:
+---
+
+#### 🔷 **Default Parameters in Generics**
+
+- You can assign **default types** to generic parameters, useful when optional customization is desired.
 
 ```ts
-interface Point {
-  x: number;
-  y: number;
+interface Config<V, U = null> {
+  value: V;
+  options?: U;
 }
+
+const settings: Config<string> = {
+  value: 'dark',
+};
 ```
 
-- Both define object structures — choice depends on context and use case.
+- You can still override the default if needed:
+
+```ts
+const customSettings: Config<string, { theme: string }> = {
+  value: 'light',
+  options: { theme: 'minimal' },
+};
+```
 
 ---
 
-#### 🟠 **Aliasing Types for Different Data Structures**
+#### 🟢 **Using Generics with Functions**
 
-##### ➤ Using `type` for array of strings or numbers:
-
-```ts
-type StringArray = string[];
-type NumberArray = Array<number>;
-```
-
-##### ➤ Using `interface` for array structure:
+- Generic functions can accept and return values of various types while preserving type information:
 
 ```ts
-interface StringArray {
-  [index: number]: string;
+function processInput<T>(input: T): T[] {
+  return [input];
 }
 
-interface NumberArray {
-  [index: number]: number;
-}
+const strArr = processInput<string>('Hello TS');
+const numArr = processInput<number>(42);
 ```
 
-- Best used for enforcing **consistent types in arrays**.
-- `type` is generally simpler for primitives, `interface` adds clarity for object/array structure.
+- You can also use multiple generics:
+
+```ts
+function matchCouple<T, K>(person1: T, person2: K): [T, K] {
+  return [person1, person2];
+}
+
+const couple = matchCouple<string, string>('Alice', 'Jane');
+```
 
 ---
 
 ### 📚 **Resources**
 
-- [Type Assertion](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#type-assertions)
-- [Type Narrowing](https://www.typescriptlang.org/docs/handbook/2/narrowing.html)
-- [Interfaces vs Types](https://www.typescriptlang.org/docs/handbook/2/objects.html)
-- [Type Declarations](https://www.typescriptlang.org/docs/handbook/2/objects.html#defining-types)
-- [Index Signatures](https://www.typescriptlang.org/docs/handbook/2/objects.html#index-signatures)
+- [Generics Handbook](https://www.typescriptlang.org/docs/handbook/2/generics.html)
+- [Generic Interfaces](https://www.typescriptlang.org/docs/handbook/2/objects.html#generic-objects)
+- [Default Type Parameters](https://www.typescriptlang.org/docs/handbook/2/generics.html#default-type-arguments)
+- [Generic Functions](https://www.typescriptlang.org/docs/handbook/2/functions.html#call-signatures)
 
 ---
 
@@ -158,7 +147,7 @@ Follow these steps to run this branch in your machine:
 3. **Switch to this branch:**
 
    ```bash
-   git checkout typeScript_2.1
+   git checkout typeScript_2.2
    ```
 
 4. **Install dependencies:**

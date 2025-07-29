@@ -1,101 +1,80 @@
 {
   // ********************************************* //
-  // ? Type Assertion
-  let input: any;
-  input = 'Hello, TypeScript!';
-  input as string;
+  // Introduction to generics
 
-  //! This will not cause an error, because `input` is converted to the type `string`
-  // input = 42;
-  console.log(`Input as string: ${(input as string).toUpperCase()}`);
+  const staticStrArr: string[] = ['apple', 'banana', 'cherry'];
 
-  // ? Type Narrowing
+  type ArrGeneric<T> = Array<T>;
 
-  function processResult(value: string | number): string | number {
-    if (typeof value === 'string') {
-      return `String value: ${value.toUpperCase()}`;
-    }
+  type ArrGenericDifferent<T> = T[];
 
-    return value * 2;
-  }
+  const genStrArr: ArrGeneric<string> = ['apple', 'banana', 'cherry'];
 
-  const result1 = processResult('hello') as string;
-  const result2 = processResult(42) as number;
+  const genNumArr: ArrGenericDifferent<number> = [1, 2, 3];
 
-  console.log(`Result 1: ${result1}`);
-  console.log(`Result 2:`, result2);
+  type ArrDynamic<T> = T[];
 
-  // ? Interface, type vs interface
-
-  // Type declaration
-
-  // with type
   type User = {
     name: string;
     age: number;
+    isActive: boolean;
   };
 
-  const user: User = {
-    name: 'Alice',
-    age: 30,
-  };
+  const user: ArrDynamic<User> = [
+    {
+      name: 'John Doe',
+      age: 30,
+      isActive: true,
+    },
+    {
+      name: 'Jane Smith',
+      age: 25,
+      isActive: false,
+    },
+  ];
 
-  // with interface
+  type GenericTuple<T, K> = [T, K];
 
-  interface UserInterface {
+  const pair: GenericTuple<string, number> = ['apple', 1];
+
+  // Using generics with interfaces
+
+  interface Developer<T> {
     name: string;
     age: number;
+    skills: T[];
   }
 
-  const userInt: UserInterface = {
-    name: 'Bob',
-    age: 25,
+  const mobileDeveloper: Developer<string> = {
+    name: 'Alice',
+    age: 28,
+    skills: ['React Native', 'Flutter'],
   };
 
-  //  extending type and interface
+  // Default Parameters in Generics
 
-  // with type
-  type Admin = User & {
-    role: string;
+  interface Config<V, U = null> {
+    options?: U;
+    value: V;
+  }
+  
+  const settings: Config<string> = {
+    value: 'dark',
   };
 
-  const adminUser: Admin = {
-    name: 'Charlie',
-    age: 35,
-    role: 'Administrator',
-  };
+  // Using Generics with Functions
 
-  //  with interface
-
-  interface AdminInterface extends UserInterface {
-    role: string;
+  function processInput<T>(input: T): T[] {
+    return [input];
   }
 
-  const adminUserInt: AdminInterface = {
-    name: 'Dave',
-    age: 40,
-    role: 'Moderator',
-  };
+  const strArr = processInput<string>('Hello TS');
+  const numArr = processInput<number>(42);
 
-  console.log({ user, userInt, adminUser, adminUserInt });
-
-  // ? Aliasing types for different data types
-  //  with type to an array of strings and numbers
-
-  type StringArray = string[];
-  type NumberArray = number[];
-  const typeStringArray: StringArray = ['apple', 'banana', 'cherry'];
-  const typeNumberArray: NumberArray = [1, 2, 3, 4, 5];
-
-  // with interface to an array of strings and numbers
-  interface StringIntArray {
-    [index: number]: string;
+  function matchCouple<T, K>(person1: T, person2: K): [T, K] {
+    return [person1, person2];
   }
 
-  interface NumberIntArray {
-    [index: number]: number;
-  }
-
-  const interfaceStringArray: StringIntArray = ['apple', 'banana', 'cherry'];
-  const interfaceNumberArray: NumberArray = [1, 2, 3, 4, 5];
+  const couple = matchCouple<string, string>('Alice', 'Jane');
+  console.log({ couple });
 }
