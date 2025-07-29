@@ -121,6 +121,18 @@ const adminUser: AdminUser = {
 }; // ✅ Must satisfy both Admin and User
 ```
 
+
+---
+
+### ⚖️ Comparison:
+
+
+| Feature     | Union (`|`)                         | Intersection (`&`)                     |
+|-------------|-------------------------------------|----------------------------------------|
+| Meaning     | Either type A or type B             | Both type A and type B                 |
+| Use Case    | Accept multiple possibilities       | Merge multiple features into one type  |
+| Flexibility | More flexible                       | More strict                            |
+
 ---
 
 ### 📚 **Resources**
