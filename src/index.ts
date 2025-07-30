@@ -1,80 +1,124 @@
 {
   // ********************************************* //
-  // Introduction to generics
 
-  const staticStrArr: string[] = ['apple', 'banana', 'cherry'];
+  // Making Generic User
 
-  type ArrGeneric<T> = Array<T>;
+  const userModel = <T>(input: T) => {
+    const role = 'user';
+    return {
+      ...input,
+      role,
+    };
+  };
 
-  type ArrGenericDifferent<T> = T[];
+  const input = {
+    name: 'Jane Doe',
+    age: 30,
+  };
 
-  const genStrArr: ArrGeneric<string> = ['apple', 'banana', 'cherry'];
+  const user1 = userModel(input);
+  console.log({ user1 });
 
-  const genNumArr: ArrGenericDifferent<number> = [1, 2, 3];
+  // Constraints in typescript
 
-  type ArrDynamic<T> = T[];
+  interface UserContact {
+    email: string;
+    address: string;
+    phone?: string;
+  }
 
-  type User = {
+  const extendedUserModel = <T extends UserContact>(input: T) => {
+    const role = 'user';
+    return {
+      ...input,
+      role,
+    };
+  };
+  // const extendedUserModel = <T>(input: T & UserContact) => {
+  //   const role = 'user';
+  //   return {
+  //     ...input,
+  //     role,
+  //   };
+  // };
+
+  const extendedInput = {
+    ...input,
+    email: 'a@b.com',
+    address: '123',
+  };
+
+  const user2 = extendedUserModel(extendedInput);
+  console.log({ user2 });
+
+  // Constraint using key of
+
+  interface User {
     name: string;
-    age: number;
-    isActive: boolean;
+    email: string;
+    phone?: string;
+  }
+
+  type KeyOfUser = keyof User;
+
+  const name: KeyOfUser = 'name';
+
+  const getValue = <T, K extends keyof T>(input: T, key: K) => {
+    return input[key];
   };
 
-  const user: ArrDynamic<User> = [
-    {
-      name: 'John Doe',
-      age: 30,
-      isActive: true,
-    },
-    {
-      name: 'Jane Smith',
-      age: 25,
-      isActive: false,
-    },
-  ];
-
-  type GenericTuple<T, K> = [T, K];
-
-  const pair: GenericTuple<string, number> = ['apple', 1];
-
-  // Using generics with interfaces
-
-  interface Developer<T> {
-    name: string;
-    age: number;
-    skills: T[];
-  }
-
-  const mobileDeveloper: Developer<string> = {
-    name: 'Alice',
-    age: 28,
-    skills: ['React Native', 'Flutter'],
+  const car = {
+    make: 'Toyota',
+    model: 'Camry',
+    year: 2022,
   };
 
-  // Default Parameters in Generics
-
-  interface Config<V, U = null> {
-    options?: U;
-    value: V;
-  }
-  
-  const settings: Config<string> = {
-    value: 'dark',
-  };
-
-  // Using Generics with Functions
-
-  function processInput<T>(input: T): T[] {
-    return [input];
-  }
-
-  const strArr = processInput<string>('Hello TS');
-  const numArr = processInput<number>(42);
-
-  function matchCouple<T, K>(person1: T, person2: K): [T, K] {
-    return [person1, person2];
-  }
-
-  const couple = matchCouple<string, string>('Alice', 'Jane');
-  console.log({ couple });
+  const carMake = getValue(car, 'make');
+  console.log({ carMake });
 }
+
+/* 
+  
+  
+  To use `keyof`, then must use `type`, not `interface`.
+
+Here’s why:
+
+### 🔑 `keyof` always produces a **type**, specifically a **union of string literal types** representing the keys of an object or interface.
+
+You can’t use `interface` to define a union of keys.
+
+---
+
+### ✅ Valid (using `type`):
+
+```ts
+interface User {
+  name: string;
+  email: string;
+  phone?: string;
+}
+
+type KeyOfUser = keyof User;
+// KeyOfUser = "name" | "email" | "phone"
+```
+
+---
+
+### ❌ Invalid (using `interface`):
+
+```ts
+interface KeyOfUser extends keyof User {} // ❌ Error: An interface can only extend another interface or class
+```
+
+---
+
+### 🔧 Summary
+
+| Goal                   | Correct keyword  | Example                            |          |
+| ---------------------- | ---------------- | ---------------------------------- | -------- |
+| Define an object shape | `interface`      | `interface User { name: string; }` |          |
+| Get the keys of a type | `type` + `keyof` | `type Keys = keyof User`           |          |
+| Alias any other type   | `type`           | \`type A = string                  | number\` |
+
+  */

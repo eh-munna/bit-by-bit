@@ -2,129 +2,153 @@
 
 ---
 
-## **TypeScript 2.2 – Branch Overview**
+## **TypeScript 2.3 – Branch Overview**
 
-Welcome to the **`typeScript_2.2`** branch of **Bit By Bit!**
+Welcome to the **`typeScript_2.3`** branch of **Bit By Bit!**
 
-This branch dives into **generics in TypeScript**, showcasing how to write flexible, reusable, and type-safe components for arrays, functions, interfaces, and configurations.
+This branch explores **key-based constraints in TypeScript**, including `keyof`, `extends`, and `extends keyof`. These features help build **type-safe**, **flexible**, and **controlled** utilities for accessing object properties and enforcing structure.
 
 ---
 
 ### ✅ **What I've Learned**
 
-#### 🔹 **Generics in TypeScript**
+---
 
-- Generics let you write code that works with **any type**, but still maintains **type safety**.
+#### 🔹 **`keyof` Operator in TypeScript**
 
-```ts
-type ArrGeneric<T> = Array<T>;
-type ArrGenericDifferent<T> = T[];
-
-const genStrArr: ArrGeneric<string> = ['apple', 'banana'];
-const genNumArr: ArrGenericDifferent<number> = [1, 2, 3];
-```
-
-- You can define **custom object types** with generics:
+- `keyof` lets you extract the **keys of an object type** into a **union of string literals**.
 
 ```ts
-type User = {
+interface User {
   name: string;
-  age: number;
-  isActive: boolean;
-};
+  email: string;
+  phone?: string;
+}
 
-const users: ArrGeneric<User> = [
-  { name: 'John', age: 30, isActive: true },
-  { name: 'Jane', age: 25, isActive: false },
-];
+type KeyOfUser = keyof User; // "name" | "email" | "phone"
+
+const key1: KeyOfUser = 'name'; // ✅
+const key2: KeyOfUser = 'email'; // ✅
+const key3: KeyOfUser = 'Jane'; // ❌ Error
 ```
 
-- Tuples with generics:
+- `keyof` must be used with `type`, **not** `interface`.
 
 ```ts
-type GenericTuple<T, K> = [T, K];
-const pair: GenericTuple<string, number> = ['apple', 1];
+// ✅ Valid
+type Keys = keyof User;
+
+// ❌ Invalid
+// interface Invalid extends keyof User {} // Error: interfaces can only extend other interfaces or classes
 ```
 
 ---
 
-#### 🔸 **Using Generics with Interfaces**
+#### 🔸 **Using `extends` for Type Constraints**
 
-- Interfaces can be generic, making them more **adaptable to various data types**.
+- You can **constrain generic types** using `extends`, ensuring that the input must match a particular structure.
 
 ```ts
-interface Developer<T> {
-  name: string;
-  age: number;
-  skills: T[];
+interface UserContact {
+  email: string;
+  address: string;
+  phone?: string;
 }
 
-const mobileDeveloper: Developer<string> = {
-  name: 'Alice',
-  age: 28,
-  skills: ['React Native', 'Flutter'],
+const extendedUserModel = <T extends UserContact>(input: T) => {
+  const role = 'user';
+  return {
+    ...input,
+    role,
+  };
 };
+
+const input = {
+  name: 'Jane Doe',
+  age: 30,
+  email: 'a@b.com',
+  address: '123 Main St',
+};
+
+const user = extendedUserModel(input); // ✅ Valid because it includes UserContact props
 ```
 
 ---
 
-#### 🔷 **Default Parameters in Generics**
+#### 🔷 **Using `extends keyof` for Key-Based Access**
 
-- You can assign **default types** to generic parameters, useful when optional customization is desired.
+- You can write **safe functions** that only accept valid keys of an object using `extends keyof`.
 
 ```ts
-interface Config<V, U = null> {
-  value: V;
-  options?: U;
-}
-
-const settings: Config<string> = {
-  value: 'dark',
+const getValue = <T, K extends keyof T>(obj: T, key: K) => {
+  return obj[key];
 };
+
+const car = {
+  make: 'Toyota',
+  model: 'Camry',
+  year: 2022,
+};
+
+const carMake = getValue(car, 'make'); // ✅ OK
+const carYear = getValue(car, 'year'); // ✅ OK
+
+// ❌ Error: Property 'price' does not exist
+// const carPrice = getValue(car, 'price');
 ```
 
-- You can still override the default if needed:
+> This pattern is especially useful for **utility functions** where dynamic access is needed but still needs **type safety**.
+
+---
+
+#### 🧪 **Practical Utility: Generic User with Role**
 
 ```ts
-const customSettings: Config<string, { theme: string }> = {
-  value: 'light',
-  options: { theme: 'minimal' },
+const userModel = <T>(input: T) => {
+  const role = 'user';
+  return {
+    ...input,
+    role,
+  };
 };
+
+const baseInput = {
+  name: 'Jane Doe',
+  age: 30,
+};
+
+const user1 = userModel(baseInput); // Generic user with role
+```
+
+```ts
+// Now extend with constraints
+const extendedInput = {
+  ...baseInput,
+  email: 'a@b.com',
+  address: '123 Main St',
+};
+
+const user2 = extendedUserModel(extendedInput); // ✅ Valid: has email & address
 ```
 
 ---
 
-#### 🟢 **Using Generics with Functions**
+### 🔧 Summary
 
-- Generic functions can accept and return values of various types while preserving type information:
-
-```ts
-function processInput<T>(input: T): T[] {
-  return [input];
-}
-
-const strArr = processInput<string>('Hello TS');
-const numArr = processInput<number>(42);
-```
-
-- You can also use multiple generics:
-
-```ts
-function matchCouple<T, K>(person1: T, person2: K): [T, K] {
-  return [person1, person2];
-}
-
-const couple = matchCouple<string, string>('Alice', 'Jane');
-```
+| Goal                   | Correct keyword  | Example                            |          |
+| ---------------------- | ---------------- | ---------------------------------- | -------- |
+| Define an object shape | `interface`      | `interface User { name: string; }` |          |
+| Get the keys of a type | `type` + `keyof` | `type Keys = keyof User`           |          |
+| Alias any other type   | `type`           | \`type A = string                  | number\` |
 
 ---
 
 ### 📚 **Resources**
 
-- [Generics Handbook](https://www.typescriptlang.org/docs/handbook/2/generics.html)
-- [Generic Interfaces](https://www.typescriptlang.org/docs/handbook/2/objects.html#generic-objects)
-- [Default Type Parameters](https://www.typescriptlang.org/docs/handbook/2/generics.html#default-type-arguments)
-- [Generic Functions](https://www.typescriptlang.org/docs/handbook/2/functions.html#call-signatures)
+- [Keyof Operator](https://www.typescriptlang.org/docs/handbook/2/keyof-types.html)
+- [Type Constraints with `extends`](https://www.typescriptlang.org/docs/handbook/2/generics.html#constraints)
+- [Generic Key Access Patterns](https://www.typescriptlang.org/docs/handbook/2/objects.html#keyof-type-operator)
+- [Note](https://www.notion.so/eh-munna/Next-Level-Web-Development-5e208d26ca694a69846f0b4ac2e361b1?source=copy_link#24050d4905ac8040bdd5f852deaf100e)
 
 ---
 
@@ -147,7 +171,7 @@ Follow these steps to run this branch in your machine:
 3. **Switch to this branch:**
 
    ```bash
-   git checkout typeScript_2.2
+   git checkout typeScript_2.3
    ```
 
 4. **Install dependencies:**
