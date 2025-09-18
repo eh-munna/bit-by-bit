@@ -1,12 +1,18 @@
-# **Bit By Bit** - Fullstack Learning Journey
+# **Bit By Bit** – Fullstack Learning Journey
 
 ---
 
-## **TypeScript 2.3 – Branch Overview**
+## **TypeScript 2.4 – Asynchronous Programming**
 
-Welcome to the **`typeScript_2.3`** branch of **Bit By Bit!**
+Welcome to the **`typeScript_2.4`** branch of **Bit By Bit!**
 
-This branch explores **key-based constraints in TypeScript**, including `keyof`, `extends`, and `extends keyof`. These features help build **type-safe**, **flexible**, and **controlled** utilities for accessing object properties and enforcing structure.
+This branch dives into **asynchronous programming in TypeScript**, focusing on:
+
+- **Promises**
+- **Async/Await**
+- **Error Handling**
+
+These concepts are **core building blocks** for handling real-world tasks like fetching data from APIs, performing I/O operations, or simulating delayed tasks.
 
 ---
 
@@ -14,147 +20,96 @@ This branch explores **key-based constraints in TypeScript**, including `keyof`,
 
 ---
 
-#### 🔹 **`keyof` Operator in TypeScript**
+#### 🔹 **Creating a Promise**
 
-- `keyof` lets you extract the **keys of an object type** into a **union of string literals**.
-
-```ts
-interface User {
-  name: string;
-  email: string;
-  phone?: string;
-}
-
-type KeyOfUser = keyof User; // "name" | "email" | "phone"
-
-const key1: KeyOfUser = 'name'; // ✅
-const key2: KeyOfUser = 'email'; // ✅
-const key3: KeyOfUser = 'Jane'; // ❌ Error
-```
-
-- `keyof` must be used with `type`, **not** `interface`.
+A Promise represents the **eventual completion or failure** of an asynchronous task.
 
 ```ts
-// ✅ Valid
-type Keys = keyof User;
-
-// ❌ Invalid
-// interface Invalid extends keyof User {} // Error: interfaces can only extend other interfaces or classes
+const myPromise = () => {
+  return new Promise((resolve, reject) => {
+    const data = 'Hello, World!';
+    setTimeout(() => {
+      if (data) {
+        resolve(data);
+      } else {
+        reject(new Error('No data found'));
+      }
+    }, 1000);
+  });
+};
 ```
+
+- `resolve(value)` → Successfully finishes the async task.
+- `reject(error)` → Returns an error if the task fails.
 
 ---
 
-#### 🔸 **Using `extends` for Type Constraints**
+#### 🔸 **Consuming a Promise with Async/Await**
 
-- You can **constrain generic types** using `extends`, ensuring that the input must match a particular structure.
+`async/await` syntax makes asynchronous code **look synchronous** and improves readability.
 
 ```ts
-interface UserContact {
-  email: string;
-  address: string;
-  phone?: string;
-}
-
-const extendedUserModel = <T extends UserContact>(input: T) => {
-  const role = 'user';
-  return {
-    ...input,
-    role,
-  };
+const result = async () => {
+  try {
+    const data = await myPromise();
+    console.log(data);
+  } catch (error) {
+    console.error('Error:', error);
+  }
 };
 
-const input = {
-  name: 'Jane Doe',
-  age: 30,
-  email: 'a@b.com',
-  address: '123 Main St',
-};
-
-const user = extendedUserModel(input); // ✅ Valid because it includes UserContact props
+result();
 ```
+
+- `await` pauses execution until the Promise resolves or rejects.
+- `try/catch` ensures **proper error handling**.
 
 ---
 
-#### 🔷 **Using `extends keyof` for Key-Based Access**
+#### 🧪 **Practical Utility: Async Function Wrapper**
 
-- You can write **safe functions** that only accept valid keys of an object using `extends keyof`.
+You can wrap async calls in reusable utility functions.
 
 ```ts
-const getValue = <T, K extends keyof T>(obj: T, key: K) => {
-  return obj[key];
+const safeAsync = async <T>(promise: Promise<T>) => {
+  try {
+    const result = await promise;
+    return { data: result, error: null };
+  } catch (err) {
+    return { data: null, error: err };
+  }
 };
 
-const car = {
-  make: 'Toyota',
-  model: 'Camry',
-  year: 2022,
-};
-
-const carMake = getValue(car, 'make'); // ✅ OK
-const carYear = getValue(car, 'year'); // ✅ OK
-
-// ❌ Error: Property 'price' does not exist
-// const carPrice = getValue(car, 'price');
+(async () => {
+  const { data, error } = await safeAsync(myPromise());
+  if (data) console.log('Data:', data);
+  if (error) console.error('Error:', error);
+})();
 ```
 
-> This pattern is especially useful for **utility functions** where dynamic access is needed but still needs **type safety**.
+This pattern is useful when working with **multiple async calls** in projects.
 
 ---
 
-#### 🧪 **Practical Utility: Generic User with Role**
+### 🔧 **Summary**
 
-```ts
-const userModel = <T>(input: T) => {
-  const role = 'user';
-  return {
-    ...input,
-    role,
-  };
-};
-
-const baseInput = {
-  name: 'Jane Doe',
-  age: 30,
-};
-
-const user1 = userModel(baseInput); // Generic user with role
-```
-
-```ts
-// Now extend with constraints
-const extendedInput = {
-  ...baseInput,
-  email: 'a@b.com',
-  address: '123 Main St',
-};
-
-const user2 = extendedUserModel(extendedInput); // ✅ Valid: has email & address
-```
-
----
-
-### 🔧 Summary
-
-| Goal                   | Correct keyword  | Example                            |          |
-| ---------------------- | ---------------- | ---------------------------------- | -------- |
-| Define an object shape | `interface`      | `interface User { name: string; }` |          |
-| Get the keys of a type | `type` + `keyof` | `type Keys = keyof User`           |          |
-| Alias any other type   | `type`           | \`type A = string                  | number\` |
+| Goal                   | Approach          | Example                      |
+| ---------------------- | ----------------- | ---------------------------- |
+| Create async operation | `new Promise()`   | `const p = new Promise(...)` |
+| Wait for async result  | `await`           | `const data = await p`       |
+| Handle success/failure | `try/catch` block | See `result()` example above |
 
 ---
 
 ### 📚 **Resources**
 
-- [Keyof Operator](https://www.typescriptlang.org/docs/handbook/2/keyof-types.html)
-- [Type Constraints with `extends`](https://www.typescriptlang.org/docs/handbook/2/generics.html#constraints)
-- [Generic Key Access Patterns](https://www.typescriptlang.org/docs/handbook/2/objects.html#keyof-type-operator)
-- [Note](https://www.notion.so/eh-munna/Next-Level-Web-Development-5e208d26ca694a69846f0b4ac2e361b1?source=copy_link#24050d4905ac8040bdd5f852deaf100e)
+- [MDN: Using Promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises)
+- [Async/Await in TypeScript](https://www.typescriptlang.org/docs/handbook/2/async-await.html)
+- [Error Handling with Promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/catch)
 
 ---
 
 ### **How to Use This Branch**
-
-Follow these steps to run this branch in your machine:
 
 1. **Clone the repository:**
 
@@ -171,7 +126,7 @@ Follow these steps to run this branch in your machine:
 3. **Switch to this branch:**
 
    ```bash
-   git checkout typeScript_2.3
+   git checkout typeScript_2.4
    ```
 
 4. **Install dependencies:**
@@ -195,8 +150,6 @@ Follow these steps to run this branch in your machine:
 ---
 
 ## **Connect with Me**
-
-Feel free to reach out on any platform:
 
 <div style="display: flex; gap: 20px;">
    <a href="https://www.linkedin.com/in/eh-munna/">
