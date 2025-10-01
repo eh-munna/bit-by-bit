@@ -2,110 +2,29 @@
 
 ---
 
-## **TypeScript 2.4 – Asynchronous Programming**
+## **TypeScript 2.5 – Mapped & Utility Types**
 
-Welcome to the **`typeScript_2.4`** branch of **Bit By Bit!**
+Welcome to the **`typeScript_2.5`** branch of **Bit By Bit!**
 
-This branch dives into **asynchronous programming in TypeScript**, focusing on:
-
-- **Promises**
-- **Async/Await**
-- **Error Handling**
-
-These concepts are **core building blocks** for handling real-world tasks like fetching data from APIs, performing I/O operations, or simulating delayed tasks.
+This branch focuses on **Mapped Types** and **Utility Types** in TypeScript.
 
 ---
 
 ### ✅ **What I've Learned**
 
----
-
-#### 🔹 **Creating a Promise**
-
-A Promise represents the **eventual completion or failure** of an asynchronous task.
-
-```ts
-const myPromise = () => {
-  return new Promise((resolve, reject) => {
-    const data = 'Hello, World!';
-    setTimeout(() => {
-      if (data) {
-        resolve(data);
-      } else {
-        reject(new Error('No data found'));
-      }
-    }, 1000);
-  });
-};
-```
-
-- `resolve(value)` → Successfully finishes the async task.
-- `reject(error)` → Returns an error if the task fails.
-
----
-
-#### 🔸 **Consuming a Promise with Async/Await**
-
-`async/await` syntax makes asynchronous code **look synchronous** and improves readability.
-
-```ts
-const result = async () => {
-  try {
-    const data = await myPromise();
-    console.log(data);
-  } catch (error) {
-    console.error('Error:', error);
-  }
-};
-
-result();
-```
-
-- `await` pauses execution until the Promise resolves or rejects.
-- `try/catch` ensures **proper error handling**.
-
----
-
-#### 🧪 **Practical Utility: Async Function Wrapper**
-
-You can wrap async calls in reusable utility functions.
-
-```ts
-const safeAsync = async <T>(promise: Promise<T>) => {
-  try {
-    const result = await promise;
-    return { data: result, error: null };
-  } catch (err) {
-    return { data: null, error: err };
-  }
-};
-
-(async () => {
-  const { data, error } = await safeAsync(myPromise());
-  if (data) console.log('Data:', data);
-  if (error) console.error('Error:', error);
-})();
-```
-
-This pattern is useful when working with **multiple async calls** in projects.
-
----
-
-### 🔧 **Summary**
-
-| Goal                   | Approach          | Example                      |
-| ---------------------- | ----------------- | ---------------------------- |
-| Create async operation | `new Promise()`   | `const p = new Promise(...)` |
-| Wait for async result  | `await`           | `const data = await p`       |
-| Handle success/failure | `try/catch` block | See `result()` example above |
+- **Mapped Types**: Creating new types by iterating over the properties of an existing type.
+- **`Partial<Type>`**: Constructs a type with all properties of `Type` set to optional.
+- **`Readonly<Type>`**: Constructs a type with all properties of `Type` set to `readonly`.
+- **`Pick<Type, Keys>`**: Constructs a type by picking a set of properties `Keys` from `Type`.
+- **`Record<Keys, Type>`**: Constructs an object type with a set of properties `Keys` whose values are all of `Type`.
+- **`Required<Type>`**: Constructs a type with all properties of `Type` set to required.
 
 ---
 
 ### 📚 **Resources**
 
-- [MDN: Using Promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises)
-- [Async/Await in TypeScript](https://www.typescriptlang.org/docs/handbook/2/async-await.html)
-- [Error Handling with Promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/catch)
+- [TypeScript Docs: Mapped Types](https://www.typescriptlang.org/docs/handbook/2/mapped-types.html) - The official documentation for Mapped Types.
+- [TypeScript Docs: Utility Types](https://www.typescriptlang.org/docs/handbook/utility-types.html) - A comprehensive guide to all of TypeScript's built-in utility types, including `Partial`, `Readonly`, `Pick`, and `Record`.
 
 ---
 
@@ -126,7 +45,7 @@ This pattern is useful when working with **multiple async calls** in projects.
 3. **Switch to this branch:**
 
    ```bash
-   git checkout typeScript_2.4
+   git checkout typeScript_2.5
    ```
 
 4. **Install dependencies:**
