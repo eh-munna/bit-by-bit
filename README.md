@@ -1,60 +1,61 @@
-# **Bit By Bit** - Fullstack Learning Journey
-
-Welcome to my personal learning repository, where I document my step-by-step journey to becoming a skilled developer.
-This repo captures everything I learn—from programming fundamentals to frontend and backend technologies, and beyond.
+# **Bit By Bit** – My Learning Journey
 
 ---
 
-## **What’s Inside**
+## **Intro to Programming with C 1.1 – Basic Syntax, Variables & Data Types**
 
-This repository tracks my learning across multiple areas, including:
+Welcome to the **`intro-to-programming-with-c_1.1`** branch of **Bit By Bit!**
 
-- **Programming Fundamentals** (C, C++, problem-solving, data structures, algorithms)
-- **Frontend Development** (React, Redux, TypeScript, Next.js)
-- **Backend & Databases** (Node.js, Express, PostgreSQL, Prisma, Mongoose)
-- **And much more…**
+This branch focuses on the **basics of C programming**, helping me strengthen my **fundamental programming skills**.
 
 ---
 
-## **Main Branch – Central Hub**
+### ✅ **What I've Learned**
 
-The **`main`** branch serves as the **central hub**, providing:
-
-- An overview of all learning paths and modules.
+- **Basic Syntax**: Writing a complete C program with `main()` function.
+- **Variables**: Declaring, initializing, and using variables of different types.
+- **Data Types**: Understanding `int`, `float`, `char`, and `bool`.
+- **Input/Output**: Using `printf()` to display values.
+- **Boolean Values**: Using `stdbool.h` and boolean variables.
 
 ---
 
-## **Branch Organization**
+### 📄 **Example Code**
 
-Each branch represents a **focused module or topic**. Branches are organized to make it easy to navigate and learn systematically.
+```c
+#include <stdio.h>
+#include <stdbool.h>
 
-Each branch may include:
+int main() {
+    int number = 10;
+    char charValue = 'C';
+    bool boolValue = true;
+    float floatValue = 5.624;
 
-- **Code examples** and exercises.
-- **Notes** summarizing key concepts (`README.md`).
-- **Practice tasks** or problem-solving exercises.
+    printf("This is a number: %d\n", number);
+    printf("This is a character: %c\n", charValue);
+    printf("This is a float: %.2f\n", floatValue);
+    printf("This is a boolean: %d\n", boolValue);
 
-**Naming Convention:**
-Branches are named using a descriptive and sequential format:
-
+    return 0;
+}
 ```
-[topic-name]_[module-number]
-```
-
-**Examples:**
-
-- `intro-to-programming-with-c_1.1` → Programming Fundamentals with C, Module 1.1
-- `redux_1.1` → Redux Subtopic 1.1
-- `typescript_2.3` → TypeScript Subtopic 2.3
 
 ---
 
-## **How to Explore the Repository**
+### 📚 **Resources**
+
+- [C Programming Tutorial](https://www.learn-c.org/) – Interactive C programming tutorials.
+- [C Reference](https://en.cppreference.com/w/c) – Complete reference for C syntax and standard library.
+
+---
+
+### **How to Use This Branch**
 
 1. **Clone the repository:**
 
 ```bash
-git clone https://github.com/eh-munna/bit-by-bit
+git clone https://github.com/eh-munna/bit-by-bit.git
 ```
 
 2. **Navigate to the repository folder:**
@@ -63,21 +64,21 @@ git clone https://github.com/eh-munna/bit-by-bit
 cd bit-by-bit
 ```
 
-3. **Switch to a specific branch:**
+3. **Switch to this branch:**
 
 ```bash
-git checkout [branch-name]
+git checkout intro-to-programming-with-c_1.1
 ```
 
-4. **Check the branch README** for instructions on running code or exercises (if applicable).
+4. **Compile and run code:**
 
-> ⚠️ Not all branches require installation of dependencies; follow the instructions in each branch.
+```bash
+gcc your_file.c -o your_file && ./your_file
+```
 
 ---
 
-## **Reach Out to Me**
-
-Feel free to connect on any of these platforms:
+### **Connect with Me**
 
 <div style="display: flex; gap: 20px;">
    <a href="https://www.linkedin.com/in/eh-munna/">
