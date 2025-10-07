@@ -2,9 +2,9 @@
 
 ---
 
-## **TypeScript 2.5 – Mapped & Utility Types**
+## **TypeScript 2.6 – Mapped & Utility Types**
 
-Welcome to the **`typeScript_2.5`** branch of **Bit By Bit!**
+Welcome to the **`typeScript_2.6`** branch of **Bit By Bit!**
 
 This branch focuses on **Mapped Types** and **Utility Types** in TypeScript.
 
@@ -12,12 +12,9 @@ This branch focuses on **Mapped Types** and **Utility Types** in TypeScript.
 
 ### ✅ **What I've Learned**
 
-- **Mapped Types**: Creating new types by iterating over the properties of an existing type.
-- **`Partial<Type>`**: Constructs a type with all properties of `Type` set to optional.
-- **`Readonly<Type>`**: Constructs a type with all properties of `Type` set to `readonly`.
-- **`Pick<Type, Keys>`**: Constructs a type by picking a set of properties `Keys` from `Type`.
-- **`Record<Keys, Type>`**: Constructs an object type with a set of properties `Keys` whose values are all of `Type`.
-- **`Required<Type>`**: Constructs a type with all properties of `Type` set to required.
+- **Class Basics**: Understanding the structure and syntax of classes in TypeScript.
+- **Inheritance in OOP**: Learning how classes can inherit properties and methods from other classes.
+- **Type Guards with instanceof**: Exploring how to use `instanceof` to narrow down types in TypeScript.
 
 ---
 
@@ -45,7 +42,7 @@ This branch focuses on **Mapped Types** and **Utility Types** in TypeScript.
 3. **Switch to this branch:**
 
    ```bash
-   git checkout typeScript_2.5
+   git checkout typeScript_2.6
    ```
 
 4. **Install dependencies:**
