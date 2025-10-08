@@ -23,7 +23,7 @@ This branch focuses on the **basics of C programming**, helping me strengthen my
 
 ### 📄 **Example Code**
 
-````c
+```c
 #include <stdio.h>
 
 int main() {
@@ -44,6 +44,8 @@ int main() {
 
     return 0;
 }
+```
+
 ```c
 #include <stdio.h>
 #include <stdbool.h>
@@ -61,7 +63,7 @@ int main() {
 
     return 0;
 }
-````
+```
 
 ---
 
