@@ -2,9 +2,9 @@
 
 ---
 
-## **Intro to Programming with C 1.1 – Basic Syntax, Variables & Data Types**
+## **Intro to Programming with C 1.2 – Conditional Statements and Some Basic Practices**
 
-Welcome to the **`intro-to-programming-with-c_1.1`** branch of **Bit By Bit!**
+Welcome to the **`intro-to-programming-with-c_1.2`** branch of **Bit By Bit!**
 
 This branch focuses on the **basics of C programming**, helping me strengthen my **fundamental programming skills**.
 
@@ -12,12 +12,8 @@ This branch focuses on the **basics of C programming**, helping me strengthen my
 
 ### ✅ **What I've Learned**
 
-- **Basic Syntax**: Writing a complete C program with `main()` function.
-- **Variables**: Declaring, initializing, and using variables of different types.
-- **Data Types**: Understanding `int`, `float`, `char`, and `bool`.
-- **Input/Output**: Using `printf()` to display values.
-- **Boolean Values**: Using `stdbool.h` and boolean variables.
-- **Taking Input**: Using `scanf()` to take input from the user.
+- **Conditional Statements**: `if`, `else if`, `else` for decision-making.
+- **Some Basic Practices**: Solved simple problems using C.
 
 ---
 
@@ -91,7 +87,7 @@ cd bit-by-bit
 3. **Switch to this branch:**
 
 ```bash
-git checkout intro-to-programming-with-c_1.1
+git checkout intro-to-programming-with-c_1.2
 ```
 
 4. **Compile and run code:**
