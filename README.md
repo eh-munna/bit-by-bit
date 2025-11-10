@@ -5,47 +5,15 @@ This repo captures everything I learn—from programming fundamentals to fronten
 
 ---
 
-## **What’s Inside**
+## **JS Practice Branch – `zero_1.2`**
 
-This repository tracks my learning across multiple areas, including:
+The **`zero_1.2`** branch is dedicated to practicing deep JavaScript topics, including:
 
-- **Programming Fundamentals** (C, C++, problem-solving, data structures, algorithms)
-- **Frontend Development** (React, Redux, TypeScript, Next.js)
-- **Backend & Databases** (Node.js, Express, PostgreSQL, Prisma, Mongoose)
-- **And much more…**
+- Working with **Set** and **Map**
+- Transforming and handling **API data**
+- Other JavaScript concepts and exercises
 
----
-
-## **Main Branch – Central Hub**
-
-The **`main`** branch serves as the **central hub**, providing:
-
-- An overview of all learning paths and modules.
-
----
-
-## **Branch Organization**
-
-Each branch represents a **focused module or topic**. Branches are organized to make it easy to navigate and learn systematically.
-
-Each branch may include:
-
-- **Code examples** and exercises.
-- **Notes** summarizing key concepts (`README.md`).
-- **Practice tasks** or problem-solving exercises.
-
-**Naming Convention:**
-Branches are named using a descriptive and sequential format:
-
-```
-[topic-name]_[module-number]
-```
-
-**Examples:**
-
-- `intro-to-programming-with-c_1.1` → Programming Fundamentals with C, Module 1.1
-- `redux_1.1` → Redux Subtopic 1.1
-- `typescript_2.3` → TypeScript Subtopic 2.3
+This branch serves as a sandbox for coding challenges, exercises, and experiments as I deepen my JS skills.
 
 ---
 
@@ -66,12 +34,28 @@ cd bit-by-bit
 3. **Switch to a specific branch:**
 
 ```bash
-git checkout [branch-name]
+git checkout zero_1.2
 ```
 
-4. **Check the branch README** for instructions on running code or exercises (if applicable).
+4. **Install dependencies (if needed):**
 
-> ⚠️ Not all branches require installation of dependencies; follow the instructions in each branch.
+Most exercises are pure JavaScript and can run with Node.js directly.
+If a file requires additional modules, first initialize npm and install dependencies:
+
+```bash
+npm init -y          # Only if you don’t have package.json
+npm install [module] # Replace [module] with the required package
+```
+
+5. **Run the code:**
+
+```bash
+node filename.js
+# Example:
+node 1.2_01.js
+```
+
+⚠️ Check the file comments or branch README for notes on specific exercises or dependencies.
 
 ---
 
