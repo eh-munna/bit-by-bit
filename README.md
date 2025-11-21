@@ -2,106 +2,9 @@
 
 ---
 
-# **TypeScript 2.7 – Branch Overview**
+## **JavaScript 1.1 – Branch Overview**
 
-This branch focuses on **key-based type extraction** in TypeScript — specifically how `typeof`, `keyof`, and indexed access types work together to create **exact, literal-safe**, compile-time-verified systems.
-
-The core idea:
-You define a frozen object → TypeScript reads its shape → you extract keys → you extract values → you restrict functions to those values.
-
----
-
-## **Core Concept: Using `typeof` + `keyof` Instead of Enums**
-
-```ts
-const ROLE = {
-  ADMIN: 'admin',
-  USER: 'user',
-  GUEST: 'guest',
-} as const;
-```
-
-`as const` locks:
-
-- the property names
-- the literal values (`"admin"`, `"user"`, `"guest"`)
-- and converts everything into **readonly** literals
-
-### Step 1 — Extract the object’s type
-
-```ts
-type T1 = typeof ROLE;
-```
-
-TypeScript reads the **shape** of the object:
-
-```ts
-{
-  readonly ADMIN: "admin";
-  readonly USER: "user";
-  readonly GUEST: "guest";
-}
-```
-
-No runtime code. Pure type introspection.
-
----
-
-### Step 2 — Extract only the keys
-
-```ts
-type KeysOfRole = keyof typeof ROLE;
-```
-
-This builds a union of the object's **property names**:
-
-```
-"ADMIN" | "USER" | "GUEST"
-```
-
----
-
-### Step 3 — Extract only the values
-
-```ts
-type RoleValues = (typeof ROLE)[KeysOfRole];
- >> Here, KeysOfRole which is actually: type KeysOfRole = keyof typeof ROLE;
-```
-
-TypeScript resolves it like this:
-
-```
-typeof ROLE["ADMIN" | "USER" | "GUEST"]
-
-↓
-
-typeof ROLE["ADMIN"] | typeof ROLE["USER"] | typeof ROLE["GUEST"]
-
-↓
-
-"admin" | "user" | "guest"
-```
-
-You now have a **value union type** directly extracted from a real object.
-
----
-
-### Step 4 — Use it in a function
-
-```ts
-function getRole(role: (typeof ROLE)[KeysOfRole]): string {
-  return `Role is: ${role}`;
-}
-
-getRole(ROLE.ADMIN); // Valid
-getRole('admin'); // Also valid (same literal)
-```
-
-Why both work:
-TypeScript erases types at runtime.
-`ROLE.ADMIN` is `"admin"`.
-`"admin"` is `"admin"`.
-The function accepts any value from the union `"admin" | "user" | "guest"`
+Here I have just make some basic configuration and connect the project with JavaScript.
 
 ---
 
@@ -124,7 +27,7 @@ Follow these steps to run this branch in your machine:
 3. **Switch to this branch:**
 
    ```bash
-   git checkout typeScript_2.7
+   git checkout javaScript_1.1
    ```
 
 4. **Install dependencies:**
