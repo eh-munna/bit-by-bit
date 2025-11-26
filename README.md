@@ -1,111 +1,84 @@
 # **Bit By Bit** - Fullstack Learning Journey
 
----
+## **Node_1.1 – Branch Overview**
 
-# **TypeScript 2.7 – Branch Overview**
+## **Core Concepts are:**
 
-This branch focuses on **key-based type extraction** in TypeScript — specifically how `typeof`, `keyof`, and indexed access types work together to create **exact, literal-safe**, compile-time-verified systems.
-
-The core idea:
-You define a frozen object → TypeScript reads its shape → you extract keys → you extract values → you restrict functions to those values.
-
----
-
-## **Core Concept: Using `typeof` + `keyof` Instead of Enums**
-
-```ts
-const ROLE = {
-  ADMIN: 'admin',
-  USER: 'user',
-  GUEST: 'guest',
-} as const;
-```
-
-`as const` locks:
-
-- the property names
-- the literal values (`"admin"`, `"user"`, `"guest"`)
-- and converts everything into **readonly** literals
-
-### Step 1 — Extract the object’s type
-
-```ts
-type T1 = typeof ROLE;
-```
-
-TypeScript reads the **shape** of the object:
-
-```ts
-{
-  readonly ADMIN: "admin";
-  readonly USER: "user";
-  readonly GUEST: "guest";
-}
-```
-
-No runtime code. Pure type introspection.
+- Understanding `process.argv` (Command-Line Arguments)
+- Reading Files with the fs Module
+  - Synchronous File Reading
+  - Asynchronous File Reading
+- Writing and Appending Files with the fs Module
+  - Synchronous File Writing
+  - Asynchronous File Writing
+- Deleting Files with the fs Module
+- Introduction to the path Module
+  - Get the file directory, file name, extension, and file path object
+  - Removing file extensions
+  - Concatenating path segments
+- Organizing Files with the path Module
+  - Creating directories
+  - Copying files
+  - Moving files
+- Introduction to the os Module
+  - Get the current working directory
+  - Get the operating system
+  - Get the system's release level
+  - Get the system's architecture
+- Introduction to the Crypto Module
+  - Generating a random string
+  - Hashing a string
+  - Encrypting and decrypting a string
+- Configuring Environment Variables
 
 ---
 
-### Step 2 — Extract only the keys
+## **Notes:**
 
-```ts
-type KeysOfRole = keyof typeof ROLE;
+### **`process.argv`**
+
+```js
+const args = process.argv; // Get command-line arguments
 ```
 
-This builds a union of the object's **property names**:
+- `process` is a global object provided by Node.
+- `process.argv` is an array containing all command-line arguments used when running the script.
 
+### **How `process.argv` Works**
+
+1. **Index 0:** Path to the Node executable
+2. **Index 1:** Path to the script being executed
+3. **Index ≥ 2:** User-provided arguments
+
+### **Example**
+
+Running:
+
+```bash
+node process.js arg1 arg2 arg3
 ```
-"ADMIN" | "USER" | "GUEST"
+
+Produces:
+
+```js
+[
+  '/path/to/node', // Index 0
+  '/path/to/process.js', // Index 1
+  'arg1', // Index 2
+  'arg2', // Index 3
+  'arg3', // Index 4
+];
+```
+
+```js
+console.log('Arguments:', args);
 ```
 
 ---
 
-### Step 3 — Extract only the values
+## **Resources:**
 
-```ts
-type RoleValues = (typeof ROLE)[KeysOfRole];
- >> Here, KeysOfRole which is actually: type KeysOfRole = keyof typeof ROLE;
-```
-
-TypeScript resolves it like this:
-
-```
-typeof ROLE["ADMIN" | "USER" | "GUEST"]
-
-↓
-
-typeof ROLE["ADMIN"] | typeof ROLE["USER"] | typeof ROLE["GUEST"]
-
-↓
-
-"admin" | "user" | "guest"
-```
-
-You now have a **value union type** directly extracted from a real object.
-
----
-
-### Step 4 — Use it in a function
-
-```ts
-function getRole(role: (typeof ROLE)[KeysOfRole]): string {
-  return `Role is: ${role}`;
-}
-
-getRole(ROLE.ADMIN); // Valid
-getRole('admin'); // Also valid (same literal)
-```
-
-Why both work:
-TypeScript erases types at runtime.
-`ROLE.ADMIN` is `"admin"`.
-`"admin"` is `"admin"`.
-The function accepts any value from the union `"admin" | "user" | "guest"`
-
----
-
-### **How to Use This Branch**
+## **How to Use This Branch**
 
 Follow these steps to run this branch in your machine:
 
@@ -124,7 +97,7 @@ Follow these steps to run this branch in your machine:
 3. **Switch to this branch:**
 
    ```bash
-   git checkout typeScript_2.7
+   git checkout node_1.1
    ```
 
 4. **Install dependencies:**
