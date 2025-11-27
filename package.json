@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "ts-node-dev --respawn ./src/index.ts",
+    "start": "ts-node-dev --respawn --transpile-only ./src/server.ts",
     "build": "tsc"
   },
   "repository": {
@@ -20,7 +20,10 @@
   },
   "homepage": "https://github.com/eh-munna/bit-by-bit#readme",
   "devDependencies": {
-    "ts-node-dev": "^2.0.0"
+    "@types/node": "^24.10.1",
+    "ts-node": "^10.9.2",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.9.3"
   },
   "dependencies": {
     "dotenv": "^17.2.3"

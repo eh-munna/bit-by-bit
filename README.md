@@ -1,82 +1,8 @@
 # **Bit By Bit** - Fullstack Learning Journey
 
-## **Node_1.1 – Branch Overview**
+## **Node_1.2 – Branch Overview**
 
-## **Core Concepts are:**
 
-- Understanding `process.argv` (Command-Line Arguments)
-- Reading Files with the fs Module
-  - Synchronous File Reading
-  - Asynchronous File Reading
-- Writing and Appending Files with the fs Module
-  - Synchronous File Writing
-  - Asynchronous File Writing
-- Deleting Files with the fs Module
-- Introduction to the path Module
-  - Get the file directory, file name, extension, and file path object
-  - Removing file extensions
-  - Concatenating path segments
-- Organizing Files with the path Module
-  - Creating directories
-  - Copying files
-  - Moving files
-- Introduction to the os Module
-  - Get the current working directory
-  - Get the operating system
-  - Get the system's release level
-  - Get the system's architecture
-- Introduction to the Crypto Module
-  - Generating a random string
-  - Hashing a string
-  - Encrypting and decrypting a string
-- Configuring Environment Variables
-
----
-
-## **Notes:**
-
-### **`process.argv`**
-
-```js
-const args = process.argv; // Get command-line arguments
-```
-
-- `process` is a global object provided by Node.
-- `process.argv` is an array containing all command-line arguments used when running the script.
-
-### **How `process.argv` Works**
-
-1. **Index 0:** Path to the Node executable
-2. **Index 1:** Path to the script being executed
-3. **Index ≥ 2:** User-provided arguments
-
-### **Example**
-
-Running:
-
-```bash
-node process.js arg1 arg2 arg3
-```
-
-Produces:
-
-```js
-[
-  '/path/to/node', // Index 0
-  '/path/to/process.js', // Index 1
-  'arg1', // Index 2
-  'arg2', // Index 3
-  'arg3', // Index 4
-];
-```
-
-```js
-console.log('Arguments:', args);
-```
-
----
-
-## **Resources:**
 
 ## **How to Use This Branch**
 
@@ -97,7 +23,7 @@ Follow these steps to run this branch in your machine:
 3. **Switch to this branch:**
 
    ```bash
-   git checkout node_1.1
+   git checkout node_1.2
    ```
 
 4. **Install dependencies:**

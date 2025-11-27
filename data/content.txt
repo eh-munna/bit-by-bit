@@ -1,3 +1,0 @@
-
-Here are some contents for this file
-Which will be read by the Node.js file reader
