@@ -2,7 +2,14 @@
 
 ## **Node_1.2 – Branch Overview**
 
+## **Core Concepts Covered:**
 
+- Building a Server with Node.js
+- Route Handling
+
+---
+
+## **Resources:**
 
 ## **How to Use This Branch**
 
