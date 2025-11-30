@@ -1,6 +1,6 @@
 # **Bit By Bit** - Fullstack Learning Journey
 
-## **Node_1.2 – Branch Overview**
+## **Express_1.1 – Branch Overview**
 
 ## **Core Concepts Covered:**
 
@@ -30,7 +30,7 @@ Follow these steps to run this branch in your machine:
 3. **Switch to this branch:**
 
    ```bash
-   git checkout node_1.2
+   git checkout express_1.1
    ```
 
 4. **Install dependencies:**
