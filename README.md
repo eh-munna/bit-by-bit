@@ -6,6 +6,7 @@
 
 - Building a Server with Node.js
 - Route Handling
+- SQL Querying with PostgreSQL
 
 ---
 
