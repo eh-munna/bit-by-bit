@@ -8,7 +8,7 @@
 - Route Handling
 - SQL Querying with PostgreSQL
 - Middleware Integration
-- Not Found Route Handling
+- Not Found Error Handling
 
 ---
 
