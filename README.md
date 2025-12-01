@@ -7,6 +7,8 @@
 - Building a Server with Node.js
 - Route Handling
 - SQL Querying with PostgreSQL
+- Middleware Integration
+- Not Found Route Handling
 
 ---
 
