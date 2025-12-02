@@ -1,6 +1,6 @@
 # **Bit By Bit** - Fullstack Learning Journey
 
-## **Express_1.1 – Branch Overview**
+## **Express_1.2 – Branch Overview**
 
 ## **Core Concepts Covered:**
 
@@ -9,6 +9,7 @@
 - SQL Querying with PostgreSQL
 - Middleware Integration
 - Not Found Route Handling
+- Modular Code Structure Implementation
 
 ---
 
@@ -33,7 +34,7 @@ Follow these steps to run this branch in your machine:
 3. **Switch to this branch:**
 
    ```bash
-   git checkout express_1.1
+   git checkout express_1.2
    ```
 
 4. **Install dependencies:**
